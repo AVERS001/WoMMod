@@ -1,0 +1,6 @@
+tile.portalThaum.name=Thaumic portal core
+tile.portalBotan.name=Floral portal core
+item.ThaumicTimeShard.name=Eldritch time shard
+item.FloralTimeShard.name=Floral time shard
+item.BloodyTimeShard.name=Crismon time shard
+itemGroup.tabWoM=World of Magic
