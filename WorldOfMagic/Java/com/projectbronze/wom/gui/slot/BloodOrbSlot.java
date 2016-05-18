@@ -4,7 +4,6 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import WayofTime.alchemicalWizardry.ModItems;
 
 public class BloodOrbSlot extends Slot {
 
@@ -19,7 +18,7 @@ public class BloodOrbSlot extends Slot {
     
     public static boolean isBloodOrb(ItemStack stack)
     {
-    	Item[] bloodorb = new Item[6];
+    	/*Item[] bloodorb = new Item[6];
     	bloodorb[0] = ModItems.weakBloodOrb;
     	bloodorb[1] = ModItems.apprenticeBloodOrb;
     	bloodorb[2] = ModItems.magicianBloodOrb;
@@ -32,7 +31,7 @@ public class BloodOrbSlot extends Slot {
     		{
     			return true;
     		}
-    	}
+    	}*/
 		return false;
     }
     
