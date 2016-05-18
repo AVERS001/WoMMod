@@ -6,6 +6,8 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import WayofTime.alchemicalWizardry.ModBlocks;
+import WayofTime.alchemicalWizardry.api.soulNetwork.SoulNetworkHandler;
 
 import com.projectbronze.wom.gui.slot.BloodOrbSlot;
 import com.projectbronze.wom.registry.BlockRegistry;
@@ -14,8 +16,7 @@ public class BloodyCoreEntity extends GenericCoreEntity implements IInventory{
 	public ItemStack[] inventory;
 	private int lastside = 0;
 	private int resettime = 20;
-	//private ItemStack mainblock = new ItemStack(ModBlocks.blockStabilityGlyph, 1, 0);
-	private ItemStack mainblock = new ItemStack(BlockRegistry.bloodyCore, 1, 0);
+	private ItemStack mainblock = new ItemStack(ModBlocks.blockStabilityGlyph, 1, 0);
 	private Block portalblock = BlockRegistry.BloodyPortal;
 	private Boolean isOpen = false;
 	@Override
@@ -50,7 +51,7 @@ public class BloodyCoreEntity extends GenericCoreEntity implements IInventory{
 	            if (this.getStackInSlot(index).stackSize <= 0) {
 	                this.setInventorySlotContents(index, null);
 	            } else {
-	                //Just to show that changes happened
+
 	                this.setInventorySlotContents(index, this.getStackInSlot(index));
 	            }
 
@@ -157,7 +158,7 @@ public class BloodyCoreEntity extends GenericCoreEntity implements IInventory{
 			int structure = checkStructure(worldObj, xCoord, yCoord, zCoord, mainblock);
 			resettime--;
 			if(resettime == 0)
-			if(structure != 0 && inventory != null && inventory[0] != null && !isOpen /*&& SoulNetworkHandler.syphonFromNetwork(inventory[0], 100000) != 0*/ || structure != 0 && inventory != null && inventory[0] != null && isOpen /*&& SoulNetworkHandler.syphonFromNetwork(inventory[0], 1000) != 0*/)
+			if(structure != 0 && inventory != null && inventory[0] != null && !isOpen && SoulNetworkHandler.syphonFromNetwork(inventory[0], 100000) != 0 || structure != 0 && inventory != null && inventory[0] != null && isOpen && SoulNetworkHandler.syphonFromNetwork(inventory[0], 1000) != 0)
 			{
 				isOpen = true;
 					switch (structure)

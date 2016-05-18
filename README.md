@@ -7,4 +7,4 @@ Thaumcraft
 
 Botania
 
-Blood Magic (Temporaly no)
+Blood Magic
