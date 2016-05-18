@@ -1,4 +1,4 @@
-/*package com.projectbronze.wom.gui.client;
+package com.projectbronze.wom.gui.client;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.inventory.IInventory;
@@ -34,4 +34,4 @@ public class ThaumicFurnaceGUI extends GuiContainer {
 		drawTexturedModalRect(k, l, 0, 0, xSize, ySize);
     	
     }
-}*/
+}

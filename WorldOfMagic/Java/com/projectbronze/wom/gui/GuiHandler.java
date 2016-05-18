@@ -4,6 +4,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
 import com.projectbronze.wom.gui.client.BloodyCoreGUI;
+import com.projectbronze.wom.gui.client.ThaumicFurnaceGUI;
 import com.projectbronze.wom.gui.client.TimeReturnerGUI;
 import com.projectbronze.wom.gui.container.BloodyPortalContainer;
 import com.projectbronze.wom.gui.container.ThaumicFuranceContainer;
@@ -33,8 +34,7 @@ public class GuiHandler implements IGuiHandler {
         }
         case(ThaumicFurnaceID):
         {
-        	//return new ThaumicFuranceContainer(player.inventory, (ThaumicFurnaceEntity) world.getTileEntity(x, y, z));
-        	return null;
+        	return new ThaumicFuranceContainer(player.inventory, (ThaumicFurnaceEntity) world.getTileEntity(x, y, z));
         }
         default:
         {
@@ -57,8 +57,7 @@ public class GuiHandler implements IGuiHandler {
         }
         case(ThaumicFurnaceID):
         {
-        	//return new ThaumicFurnaceGUI(player.inventory, (ThaumicFurnaceEntity) world.getTileEntity(x, y, z));
-        	return null;
+        	return new ThaumicFurnaceGUI(player.inventory, (ThaumicFurnaceEntity) world.getTileEntity(x, y, z));
         }
         default:
         {

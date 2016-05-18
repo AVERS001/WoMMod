@@ -5,11 +5,18 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-
+/*
+ * Standart class for portal cores
+ */
 public class GenericCoreEntity extends TileEntity {
 	
-	/*
-	 * returns 1 if placed int x axis, 2 if in z, 0 in any other
+	/**
+	 * @param worldObj - world
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @param mainblock - main block of structure
+	 * @return 1 if placed int x axis, 2 if in z, 0 in any other
 	 */
 	public int checkStructure(World worldObj, int x, int y, int z, ItemStack mainblock)
 	{
@@ -46,6 +53,12 @@ public class GenericCoreEntity extends TileEntity {
 		return 0;
 	}
 	
+	/**
+	 * Place blocks in 3x3 over tile in x axis
+	 * 
+	 * @param worldObj - world
+	 * @param block - block to place
+	 */
 	public void placex(World worldObj, Block block)
 	{
 		for(int x = xCoord - 1; x < xCoord + 2; x++)
@@ -57,6 +70,12 @@ public class GenericCoreEntity extends TileEntity {
 		}
 	}
 	
+	/**
+	 * Place blocks in 3x3 over tile in z axis
+	 * 
+	 * @param worldObj - world
+	 * @param block - block to place
+	 */
 	public void placez(World worldObj, Block block)
 	{
 		for(int z = zCoord - 1; z < zCoord + 2; z++)
@@ -69,6 +88,12 @@ public class GenericCoreEntity extends TileEntity {
 		}
 	}
 	
+	/**
+	 * Clear blocks in 3x3 over tile in x axis
+	 * 
+	 * @param worldObj - world
+	 * 
+	 */
 	public void clearx(World worldObj)
 	{
 		for(int x = xCoord - 1; x < xCoord + 2; x++)
@@ -80,6 +105,13 @@ public class GenericCoreEntity extends TileEntity {
 		}
 	}
 	
+	
+	/**
+	 * Clear blocks in 3x3 over tile in z axis
+	 * 
+	 * @param worldObj - world
+	 * 
+	 */
 	public void clearz(World worldObj)
 	{
 		for(int z = zCoord - 1; z < zCoord + 2; z++)

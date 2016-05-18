@@ -126,9 +126,6 @@ public class ThaumCoreEntity extends GenericCoreEntity implements IAspectContain
 		aspects.readFromNBT(compound);
 	}
 	
-    
-    
-	
 		
 		@Override
 		public AspectList getAspects() {

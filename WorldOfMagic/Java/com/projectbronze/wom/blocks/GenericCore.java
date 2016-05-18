@@ -9,7 +9,9 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
 import com.projectbronze.wom.core.WomCore;
-
+/*
+ * Standard for core blocks, also contain removing portal blocks after destroying block
+ */
 public class GenericCore extends BlockContainer {
 	
 	private Block portal;

@@ -8,12 +8,12 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
 public class GenericPortalEntity extends TileEntity {
-	public void spawnItem(ItemStack stack, World worldObj, int x, int y, int z) {
+	private void spawnItem(ItemStack stack, World worldObj, int x, int y, int z) {
 		EntityItem item = new EntityItem(worldObj, x + 0.5, y + 1.5, z + 0.5, stack);
 		worldObj.spawnEntityInWorld(item);
 }
 	
-	public void port(World worldObj, int x, int y, int z, ItemStack inputitem, ItemStack retrunstack, List items)
+	private void port(World worldObj, int x, int y, int z, ItemStack inputitem, ItemStack retrunstack, List items)
 	{
 		
 			EntityItem entity = (EntityItem) items.get(0);
@@ -25,8 +25,14 @@ public class GenericPortalEntity extends TileEntity {
 			}
 	}
 	private static int ticksBeforeItem = 100;
-	/*
-	 * Call this methot in updateEntity()
+	/**
+	 * Call in updateEntity
+	 * @param worldObj
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @param input - ItemStack that must be throwed in portal
+	 * @param output - ItemStack that portal will give to you afte you throw input stack
 	 */
 	public void update(World worldObj, int x, int y, int z, ItemStack input, ItemStack output)
 	{

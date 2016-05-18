@@ -115,6 +115,8 @@ public class BotanCoreEntity extends GenericCoreEntity{
 		}
 	}
 	
+	
+	//Additional check for mana pools
 	@Override
 	public int checkStructure(World worldObj, int x, int y, int z, ItemStack mainblock) {
 		Block pool = ModBlocks.pool;

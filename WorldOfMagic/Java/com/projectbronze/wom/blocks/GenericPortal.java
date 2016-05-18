@@ -13,7 +13,9 @@ import net.minecraft.world.World;
 
 import com.projectbronze.wom.core.WomCore;
 import com.projectbronze.wom.tileEntity.ThaumPortalEntity;
-
+/*
+ * standart for portal blocks.
+ */
 public class GenericPortal extends BlockContainer{
 	
 	

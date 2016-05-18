@@ -12,7 +12,7 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
-public class ThaumicFuranceContainer /*extends Container*/ {
+public class ThaumicFuranceContainer extends Container {
 	
 	private ThaumicFurnaceEntity te;
 
@@ -24,7 +24,7 @@ public class ThaumicFuranceContainer /*extends Container*/ {
 	  * Player Inventory 9-35 .. 12  - 39 inv
 	  * Player Inventory 0-8 ... 40 - 48 hotbat
 	  */
-	/*	    public ThaumicFuranceContainer(IInventory playerInv, ThaumicFurnaceEntity te) {
+		    public ThaumicFuranceContainer(IInventory playerInv, ThaumicFurnaceEntity te) {
 	        this.te = te;
 	        this.addSlotToContainer(new Slot(te, 0, 80, 8));
 	        this.addSlotToContainer(new Slot(te, 1, 80, 48));
@@ -89,5 +89,5 @@ public class ThaumicFuranceContainer /*extends Container*/ {
 	    public boolean canInteractWith(EntityPlayer playerIn) {
 	        return this.te.isUseableByPlayer(playerIn);
 	    }
-*/
+
 }
