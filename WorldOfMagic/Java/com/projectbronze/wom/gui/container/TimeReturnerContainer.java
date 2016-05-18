@@ -18,7 +18,7 @@ public class TimeReturnerContainer extends Container {
 	 /*
 	  * SLOTS:
 	  * 
-	  * Tile Entity 0-8 ........ 0  - 11
+	  * Tile Entity 0-11 ........ 0  - 11
 	  * Player Inventory 9-35 .. 12  - 39 inv
 	  * Player Inventory 0-8 ... 40 - 48 hotbat
 	  */
@@ -76,26 +76,16 @@ public class TimeReturnerContainer extends Container {
 	            ItemStack current = slot.getStack();
 	            previous = current.copy();
 	            
-	            
+	            	//Из тайла игроку
 		            if (fromSlot < 12) {	      
 		                if (!this.mergeItemStack(current, 12, 48, true))
 		                    return null;
 		            } else {
-		            	boolean valid = false;
-		            	if(current.getItem() == ItemRegistry.timeShard)
-		            	{
-		            		valid = true;
-		            		for(int i = 0; i < 12; i++)
-		            		{
-		            			TimeShardSlot sslot = (TimeShardSlot) this.getSlot(i);
-		            			if(sslot.getStack() != null && sslot.getStack().getItemDamage() == current.getItemDamage())
-		            			{
-		            				valid = false;
-		            			}
-		            		}
-		            		if (valid && !this.mergeItemStack(current, 0, 12, false))
+		            	//От игрока тайлу
+		            	//Нам не важно с каого слота мы ведём проверку, важно лишь чтобы это был наш слот
+		            	TimeShardSlot sslot = (TimeShardSlot) getSlot(1);
+		            		if (sslot.isItemValid(current) && !this.mergeItemStack(current, 0, 12, false))
 		            			return null;
-		            	}
 		            }
 	            if (current.stackSize == 0)
 	                slot.putStack((ItemStack) null);

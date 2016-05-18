@@ -32,7 +32,7 @@ public class BloodOrbSlot extends Slot {
     			return true;
     		}
     	}*/
-		return false;
+		return true;
     }
     
     public boolean isItemValid(ItemStack stack)

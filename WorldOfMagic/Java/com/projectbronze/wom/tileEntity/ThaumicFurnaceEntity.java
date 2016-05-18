@@ -6,6 +6,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
+import net.minecraft.inventory.ContainerFurnace;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -22,9 +23,9 @@ import thaumcraft.api.TileThaumcraft;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 
-public class ThaumicFurnaceEntity extends TileEntity //implements ISidedInventory
+public class ThaumicFurnaceEntity extends TileEntity implements ISidedInventory
 {
-/*	public ItemStack[] inventory;
+	public ItemStack[] inventory;
 	
 	public ThaumicFurnaceEntity() {
 		inventory = new ItemStack[getSizeInventory()];
@@ -95,7 +96,7 @@ public class ThaumicFurnaceEntity extends TileEntity //implements ISidedInventor
 
 	@Override
 	public String getInventoryName() {
-		return "BloodyPortal";
+		return "ThaumicFurnace";
 	}
 
 	@Override
@@ -125,7 +126,20 @@ public class ThaumicFurnaceEntity extends TileEntity //implements ISidedInventor
 
 	@Override
 	public boolean isItemValidForSlot(int index, ItemStack stack) {
-		return BloodOrbSlot.isBloodOrb(stack);
+		switch (index) {
+		case(0):
+		{
+			return true;
+		}
+		case(1):
+		{
+			return TileEntityFurnace.isItemFuel(stack);
+		}
+		default:
+		{
+			return false;
+		}
+		}
 	}
 	
 	@Override
@@ -178,5 +192,5 @@ public class ThaumicFurnaceEntity extends TileEntity //implements ISidedInventor
 	    return (side != 0) || (slot != 1) || (item.getItem() == Items.bucket);
 	  }
 	
-  */
+  
 }

@@ -43,7 +43,7 @@ public final class BlockRegistry {
 		GameRegistry.registerBlock(AngelSteelBlock = new AngelSteelBlock("AngelSteelBlock"), "AngelSteelBlock");
 		GameRegistry.registerBlock(auraPortal = new AuraPortal("auraPortal"), "auraPortal");
 		GameRegistry.registerBlock(auraCore = new AuraCore("auraCore", auraPortal), ItemBlockMetaBlock.class, "auraCore");
-		//GameRegistry.registerBlock(thaumicFurnace = new ThaumicFurnace("ThaumicFurnace"), "ThaumicFurnace");
+		GameRegistry.registerBlock(thaumicFurnace = new ThaumicFurnace("ThaumicFurnace"), "ThaumicFurnace");
 	
 	}
 

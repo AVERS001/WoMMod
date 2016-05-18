@@ -21,7 +21,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 public class WomCore {
 		public static final String name = "World of Magic Mod";
 		public static final String modid = "wommod";
-		public static final int globalversion = 1;
+		public static final int globalversion = 1; //—читаем что у нас первый релиз, хорощо?
 		public static final int minorversion = 0;
 		public static final int gameversion = 1710;
 		public static final int bugfixversion = 0;

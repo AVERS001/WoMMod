@@ -21,6 +21,7 @@ public class TimeShardSlot extends Slot {
     {
     	if(stack.getItem() == ItemRegistry.timeShard)
     	{
+    		//проверяем нет ли в тайле такого шарада
     		for(int i = 0; i < 12; i++)
     		{
     			if(inventory.getStackInSlot(i) != null && inventory.getStackInSlot(i).getItemDamage() == stack.getItemDamage())
