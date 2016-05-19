@@ -36,7 +36,6 @@ public class EssentialCoreEntity extends TileMRUGeneric{
 	public void updateEntity() {
 		if(!worldObj.isRemote)
 		{
-			System.out.println(this.getMRU());
 			if(resettime > 0)
 			{
 			resettime--;

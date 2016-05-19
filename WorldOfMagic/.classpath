@@ -8,5 +8,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/botania"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/BloodM"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/EssentialCraft"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/DummyCore"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

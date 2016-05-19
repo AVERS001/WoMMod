@@ -11,6 +11,8 @@ import com.projectbronze.wom.gui.slot.BoundGemSlot;
 import com.projectbronze.wom.tileEntity.BloodyCoreEntity;
 import com.projectbronze.wom.tileEntity.EssentialCoreEntity;
 
+import ec3.common.inventory.SlotBoundEssence;
+
 public class EssentialCoreContainer extends Container {
 	
 	 private EssentialCoreEntity te;
@@ -19,7 +21,7 @@ public class EssentialCoreContainer extends Container {
 	    public EssentialCoreContainer(IInventory playerInv, EssentialCoreEntity te) {
 	        this.te = te;
 	        
-	                this.addSlotToContainer(new BoundGemSlot(te, 0, 80, 24));
+	                this.addSlotToContainer(new SlotBoundEssence(te, 0, 80, 24));
 	        
 	        for (int y = 0; y < 3; ++y) {
 	            for (int x = 0; x < 9; ++x) {
