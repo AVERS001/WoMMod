@@ -8,3 +8,5 @@ Thaumcraft
 Botania
 
 Blood Magic
+
+Essential craft III

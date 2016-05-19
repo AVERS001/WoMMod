@@ -3,13 +3,16 @@ package com.projectbronze.wom.gui;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
-import com.projectbronze.wom.gui.client.BloodyCoreGUI;
-import com.projectbronze.wom.gui.client.ThaumicFurnaceGUI;
-import com.projectbronze.wom.gui.client.TimeReturnerGUI;
 import com.projectbronze.wom.gui.container.BloodyPortalContainer;
+import com.projectbronze.wom.gui.container.EssentialCoreContainer;
 import com.projectbronze.wom.gui.container.ThaumicFuranceContainer;
 import com.projectbronze.wom.gui.container.TimeReturnerContainer;
+import com.projectbronze.wom.gui.gui.BloodyCoreGUI;
+import com.projectbronze.wom.gui.gui.EssentialCoreGUI;
+import com.projectbronze.wom.gui.gui.ThaumicFurnaceGUI;
+import com.projectbronze.wom.gui.gui.TimeReturnerGUI;
 import com.projectbronze.wom.tileEntity.BloodyCoreEntity;
+import com.projectbronze.wom.tileEntity.EssentialCoreEntity;
 import com.projectbronze.wom.tileEntity.ThaumicFurnaceEntity;
 import com.projectbronze.wom.tileEntity.TimeReturnerEntity;
 
@@ -20,6 +23,7 @@ public class GuiHandler implements IGuiHandler {
 	public static final int TimeRetrunerID = 0;
 	public static final int BloodyPortalID = 1;
 	public static final int ThaumicFurnaceID = 2;
+	public static final int EssentialCoreID = 3;
     @Override
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         switch (ID)
@@ -35,6 +39,10 @@ public class GuiHandler implements IGuiHandler {
         case(ThaumicFurnaceID):
         {
         	return new ThaumicFuranceContainer(player.inventory, (ThaumicFurnaceEntity) world.getTileEntity(x, y, z));
+        }
+        case(EssentialCoreID):
+        {
+        	return new EssentialCoreContainer(player.inventory, (EssentialCoreEntity) world.getTileEntity(x, y, z));
         }
         default:
         {
@@ -58,6 +66,10 @@ public class GuiHandler implements IGuiHandler {
         case(ThaumicFurnaceID):
         {
         	return new ThaumicFurnaceGUI(player.inventory, (ThaumicFurnaceEntity) world.getTileEntity(x, y, z));
+        }
+        case(EssentialCoreID):
+        {
+        	return new EssentialCoreGUI(player.inventory, (EssentialCoreEntity) world.getTileEntity(x, y, z));
         }
         default:
         {

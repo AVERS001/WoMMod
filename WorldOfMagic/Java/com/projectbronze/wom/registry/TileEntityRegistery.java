@@ -7,6 +7,8 @@ import com.projectbronze.wom.tileEntity.BloodyCoreEntity;
 import com.projectbronze.wom.tileEntity.BloodyPortalEntity;
 import com.projectbronze.wom.tileEntity.BotanCoreEntity;
 import com.projectbronze.wom.tileEntity.BotanPortalEntity;
+import com.projectbronze.wom.tileEntity.EssentialCoreEntity;
+import com.projectbronze.wom.tileEntity.EssentialPortalEntity;
 import com.projectbronze.wom.tileEntity.ThaumCoreEntity;
 import com.projectbronze.wom.tileEntity.ThaumPortalEntity;
 import com.projectbronze.wom.tileEntity.ThaumicFurnaceEntity;
@@ -27,6 +29,8 @@ public final class TileEntityRegistery {
 		GameRegistry.registerTileEntity(BloodyPortalEntity.class, WomCore.modid + ".portalBloody");
 		GameRegistry.registerTileEntity(AuraCoreEntity.class, WomCore.modid + ".coreAura");
 		GameRegistry.registerTileEntity(AuraPortalEntity.class, WomCore.modid + ".portalAura");
+		GameRegistry.registerTileEntity(EssentialCoreEntity.class, WomCore.modid + ".coreEssential");
+		GameRegistry.registerTileEntity(EssentialPortalEntity.class, WomCore.modid + ".portalEssential");
 		GameRegistry.registerTileEntity(TimeReturnerEntity.class, WomCore.modid + ".timeReturner");
 		GameRegistry.registerTileEntity(ThaumicFurnaceEntity.class, WomCore.modid + ".thaumicFurnace");
 	

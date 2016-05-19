@@ -7,5 +7,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/thaumcraft"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/botania"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/BloodM"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/EssentialCraft"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

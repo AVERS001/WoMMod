@@ -9,6 +9,8 @@ import com.projectbronze.wom.blocks.BloodyCore;
 import com.projectbronze.wom.blocks.BloodyPortal;
 import com.projectbronze.wom.blocks.BotanCore;
 import com.projectbronze.wom.blocks.BotanPortal;
+import com.projectbronze.wom.blocks.EssentialCore;
+import com.projectbronze.wom.blocks.EssentialPortal;
 import com.projectbronze.wom.blocks.ItemBlockMetaBlock;
 import com.projectbronze.wom.blocks.ThaumCore;
 import com.projectbronze.wom.blocks.ThaumPortal;
@@ -27,6 +29,8 @@ public final class BlockRegistry {
 	public static Block BloodyPortal;
 	public static Block auraCore;
 	public static Block auraPortal;
+	public static Block essentialCore;
+	public static Block essentialPortal;
 	public static Block timeReturner;
 	public static Block AngelSteelBlock;
 	public static Block thaumicFurnace;
@@ -39,12 +43,16 @@ public final class BlockRegistry {
 		GameRegistry.registerBlock(botanCore = new BotanCore("portalBotan", botanPortal), "portalBotan");
 		GameRegistry.registerBlock(BloodyPortal = new BloodyPortal("portalBloodyPortal"), ItemBlockMetaBlock.class, "portalBloodyPortal");
 		GameRegistry.registerBlock(bloodyCore = new BloodyCore("portalBloody", BloodyPortal), "portalBloody");
-		GameRegistry.registerBlock(timeReturner = new TimeReturner("timeReturner"), "timeReturner");
 		GameRegistry.registerBlock(AngelSteelBlock = new AngelSteelBlock("AngelSteelBlock"), "AngelSteelBlock");
-		GameRegistry.registerBlock(auraPortal = new AuraPortal("auraPortal"), "auraPortal");
-		GameRegistry.registerBlock(auraCore = new AuraCore("auraCore", auraPortal), ItemBlockMetaBlock.class, "auraCore");
+		GameRegistry.registerBlock(auraPortal = new AuraPortal("auraPortal"), ItemBlockMetaBlock.class, "auraPortal");
+		GameRegistry.registerBlock(auraCore = new AuraCore("auraCore", auraPortal), "auraCore");
+		GameRegistry.registerBlock(essentialPortal = new EssentialPortal("essentialPortal"), ItemBlockMetaBlock.class, "essentialPortal");
+		GameRegistry.registerBlock(essentialCore = new EssentialCore("essentialCore", essentialPortal), "essentialCore");
+		GameRegistry.registerBlock(timeReturner = new TimeReturner("timeReturner"), "timeReturner");
+		
+		
+		
 		GameRegistry.registerBlock(thaumicFurnace = new ThaumicFurnace("ThaumicFurnace"), "ThaumicFurnace");
-	
 	}
 
 	
