@@ -5,10 +5,12 @@ import net.minecraft.world.World;
 
 import com.projectbronze.wom.gui.container.BloodyPortalContainer;
 import com.projectbronze.wom.gui.container.EssentialCoreContainer;
+import com.projectbronze.wom.gui.container.PotionBeltContainer;
 import com.projectbronze.wom.gui.container.ThaumicFuranceContainer;
 import com.projectbronze.wom.gui.container.TimeReturnerContainer;
 import com.projectbronze.wom.gui.gui.BloodyCoreGUI;
 import com.projectbronze.wom.gui.gui.EssentialCoreGUI;
+import com.projectbronze.wom.gui.gui.PotionBeltGUI;
 import com.projectbronze.wom.gui.gui.ThaumicFurnaceGUI;
 import com.projectbronze.wom.gui.gui.TimeReturnerGUI;
 import com.projectbronze.wom.tileEntity.BloodyCoreEntity;
@@ -24,6 +26,7 @@ public class GuiHandler implements IGuiHandler {
 	public static final int BloodyPortalID = 1;
 	public static final int ThaumicFurnaceID = 2;
 	public static final int EssentialCoreID = 3;
+	public static final int PotionBeltID = 4;
     @Override
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         switch (ID)
@@ -43,6 +46,10 @@ public class GuiHandler implements IGuiHandler {
         case(EssentialCoreID):
         {
         	return new EssentialCoreContainer(player.inventory, (EssentialCoreEntity) world.getTileEntity(x, y, z));
+        }
+        case(PotionBeltID):
+        {
+        	return new PotionBeltContainer(player);
         }
         default:
         {
@@ -70,6 +77,10 @@ public class GuiHandler implements IGuiHandler {
         case(EssentialCoreID):
         {
         	return new EssentialCoreGUI(player.inventory, (EssentialCoreEntity) world.getTileEntity(x, y, z));
+        }
+        case(PotionBeltID):
+        {
+        	return new PotionBeltGUI(player);
         }
         default:
         {

@@ -74,9 +74,10 @@ public class TimeShard extends Item {
 				name = "Aura";
 				break;
 			}
-			case(4): //Essential
+			case(4): //EssentialC
 			{
 				name = "SHADE";
+				break;
 			}
 			default:
 			{

@@ -34,13 +34,4 @@ public class EssentialCoreGUI extends GuiCommon {
 		this.elementList.add(new GuiBalanceState(25, 4, te));
     }
 	
-    /*@Override
-    protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
-    	GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-    	mc.getTextureManager().bindTexture(texture);
-    	int k = (width - xSize) / 2;
-		int l = (height - ySize) / 2;
-		drawTexturedModalRect(k, l, 0, 0, xSize, ySize);
-    	
-    }*/
 }

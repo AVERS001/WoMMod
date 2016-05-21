@@ -6,11 +6,13 @@ import com.projectbronze.wom.registry.BlockRegistry;
 import com.projectbronze.wom.registry.ItemRegistry;
 import com.projectbronze.wom.registry.RecepieRegistry;
 import com.projectbronze.wom.registry.TileEntityRegistery;
+import com.projectbronze.wom.world.FlowerGenerator;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 
 public class CommonProxy{
@@ -25,6 +27,7 @@ public class CommonProxy{
 	
 	public void init(FMLInitializationEvent e)
 	{
+		GameRegistry.registerWorldGenerator(new FlowerGenerator(), 0);
 		NetworkRegistry.INSTANCE.registerGuiHandler(WomCore.instance, new GuiHandler());
 	}
 	

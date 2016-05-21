@@ -27,7 +27,6 @@ public class BloodyCore extends GenericCore {
     public boolean onBlockActivated(World worldObj, int x, int y, int z, EntityPlayer player, int p_149727_6_, float p_149727_7_, float p_149727_8_, float p_149727_9_) {
     	if(!worldObj.isRemote)
     	{
-    		
     		player.openGui(WomCore.instance, GuiHandler.BloodyPortalID, worldObj, x, y, z);
     	}
     	

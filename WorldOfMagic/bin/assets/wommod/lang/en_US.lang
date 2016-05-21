@@ -1,6 +1,14 @@
 tile.portalThaum.name=Thaumic portal core
 tile.portalBotan.name=Floral portal core
-item.ThaumicTimeShard.name=Eldritch time shard
+tile.portalBloody.name=Crismon portal core
+tile.auraPortal.name=Aura portal 
+tile.essentialPortal.name=MRU portal 
+tile.auraCore.name=Aura portal core
+tile.essentialCore.name=MRU portal core
+tile.AngelSteelBlock.name=Angel steel block
+tile.timeReturner.name=Time returner
 item.FloralTimeShard.name=Floral time shard
 item.BloodyTimeShard.name=Crismon time shard
+item.AuraTimeShard.name=Aura time shard
+item.SHADETimeShard.name=SHADE time shard
 itemGroup.tabWoM=World of Magic

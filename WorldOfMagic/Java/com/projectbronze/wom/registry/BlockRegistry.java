@@ -12,6 +12,7 @@ import com.projectbronze.wom.blocks.BotanPortal;
 import com.projectbronze.wom.blocks.EssentialCore;
 import com.projectbronze.wom.blocks.EssentialPortal;
 import com.projectbronze.wom.blocks.ItemBlockMetaBlock;
+import com.projectbronze.wom.blocks.DesertFlower;
 import com.projectbronze.wom.blocks.ThaumCore;
 import com.projectbronze.wom.blocks.ThaumPortal;
 import com.projectbronze.wom.blocks.ThaumicFurnace;
@@ -34,6 +35,7 @@ public final class BlockRegistry {
 	public static Block timeReturner;
 	public static Block AngelSteelBlock;
 	public static Block thaumicFurnace;
+	public static Block desertFlower;
 	public static final void init()
 	{
 	
@@ -51,7 +53,7 @@ public final class BlockRegistry {
 		GameRegistry.registerBlock(timeReturner = new TimeReturner("timeReturner"), "timeReturner");
 		
 		
-		
+		GameRegistry.registerBlock(desertFlower = new DesertFlower("DesertFlower"), "DesertFlower");
 		GameRegistry.registerBlock(thaumicFurnace = new ThaumicFurnace("ThaumicFurnace"), "ThaumicFurnace");
 	}
 
