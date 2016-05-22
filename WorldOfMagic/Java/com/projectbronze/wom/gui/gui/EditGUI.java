@@ -31,6 +31,7 @@ public class EditGUI extends GuiContainer {
     	int k = (width - xSize) / 2;
 		int l = (height - ySize) / 2;
 		drawTexturedModalRect(k, l, 0, 0, xSize, ySize);
+		drawString(fontRendererObj, "Edit Mode", k + 65, l + 15, 0x888888);
 	}
 	
 	@Override
