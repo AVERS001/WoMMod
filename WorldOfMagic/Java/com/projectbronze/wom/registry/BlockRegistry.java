@@ -18,6 +18,7 @@ import com.projectbronze.wom.blocks.ThaumCore;
 import com.projectbronze.wom.blocks.ThaumPortal;
 import com.projectbronze.wom.blocks.ThaumicFurnace;
 import com.projectbronze.wom.blocks.TimeReturner;
+import com.projectbronze.wom.blocks.TradeStation;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -37,6 +38,7 @@ public final class BlockRegistry {
 	public static Block AngelSteelBlock;
 	public static Block thaumicFurnace;
 	public static Block desertFlower;
+	public static Block tradeStation;
 	public static final void init()
 	{
 	
@@ -53,7 +55,7 @@ public final class BlockRegistry {
 		GameRegistry.registerBlock(essentialCore = new EssentialCore("essentialCore", essentialPortal), "essentialCore");
 		GameRegistry.registerBlock(timeReturner = new TimeReturner("timeReturner"), ItemBlock.class, "timeReturner");
 		
-		
+		GameRegistry.registerBlock(tradeStation = new TradeStation("TradeStation"), "TradeStation");
 		GameRegistry.registerBlock(desertFlower = new DesertFlower("DesertFlower"), "DesertFlower");
 		GameRegistry.registerBlock(thaumicFurnace = new ThaumicFurnace("ThaumicFurnace"), "ThaumicFurnace");
 	}

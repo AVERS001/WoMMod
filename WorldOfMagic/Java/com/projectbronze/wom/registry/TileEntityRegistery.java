@@ -13,6 +13,7 @@ import com.projectbronze.wom.tileEntity.ThaumCoreEntity;
 import com.projectbronze.wom.tileEntity.ThaumPortalEntity;
 import com.projectbronze.wom.tileEntity.ThaumicFurnaceEntity;
 import com.projectbronze.wom.tileEntity.TimeReturnerEntity;
+import com.projectbronze.wom.tileEntity.TradeTileEntity;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -33,7 +34,8 @@ public final class TileEntityRegistery {
 		GameRegistry.registerTileEntity(EssentialPortalEntity.class, WomCore.modid + ".portalEssential");
 		GameRegistry.registerTileEntity(TimeReturnerEntity.class, WomCore.modid + ".timeReturner");
 		GameRegistry.registerTileEntity(ThaumicFurnaceEntity.class, WomCore.modid + ".thaumicFurnace");
-	
+		GameRegistry.registerTileEntity(TradeTileEntity.class, WomCore.modid + ".TradeStation");
+		
 	}
 	
 	

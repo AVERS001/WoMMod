@@ -24,11 +24,11 @@ public class TimeReturnerContainer extends Container {
 	  */
 	    public TimeReturnerContainer(IInventory playerInv, TimeReturnerEntity te) {
 	        this.te = te;
-	        for (int y = 0; y < 3; y++) {
+	       /* for (int y = 0; y < 3; y++) {
 	            for (int x = 0; x < 4; x++) {
 	                this.addSlotToContainer(new TimeShardSlot(te, x + y * 4, 7 + x * 21, 6 + y * 21));
 	            }
-	        }
+	        }*/
 	        
 	        for (int y = 0; y < 3; ++y) {
 	            for (int x = 0; x < 9; ++x) {
