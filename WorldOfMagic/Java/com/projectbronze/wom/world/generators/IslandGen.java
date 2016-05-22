@@ -23,9 +23,9 @@ public class IslandGen extends WorldGenerator {
     
 	 public void generateIsland (World world, Random rand, int xChunk, int zChunk)
 	    {
-		 	int xRange = random.nextInt(13) + 20;
+		 	int xRange = random.nextInt(13) + 80;
 	        int yCenter = 50 + world.getHeightValue(xChunk, zChunk) + random.nextInt(50);
-	        int zRange = random.nextInt(13) + 20;
+	        int zRange = random.nextInt(13) + 80;
 	        int height = 12;
 	        int initialHeight = height;
 	        Ellipse2D.Double ellipse = new Ellipse2D.Double(0, 0, xRange, zRange);

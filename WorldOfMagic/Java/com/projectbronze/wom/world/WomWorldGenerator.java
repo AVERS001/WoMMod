@@ -22,11 +22,11 @@ public class WomWorldGenerator implements IWorldGenerator {
 	public WomWorldGenerator() {
 		flowergen = new FlowerGen(BlockRegistry.desertFlower);
 		islandgen = new IslandGen();
-		irongen = new WorldGenMinable(Blocks.iron_ore, 10);
+		irongen = new WorldGenMinable(Blocks.iron_ore, 20);
 		goldgen = new WorldGenMinable(Blocks.gold_ore, 10);
-		diamondgen = new WorldGenMinable(Blocks.diamond_ore, 7);
+		diamondgen = new WorldGenMinable(Blocks.diamond_ore, 10);
 		redstonegen = new WorldGenMinable(Blocks.redstone_ore, 20);
-		lapisgen = new WorldGenMinable(Blocks.lapis_ore, 30);
+		lapisgen = new WorldGenMinable(Blocks.lapis_ore, 10);
 	}
 	
 	@Override
@@ -34,15 +34,16 @@ public class WomWorldGenerator implements IWorldGenerator {
     	if(world.provider.dimensionId == 0)
     	{
 			runGenerator(flowergen, world, random, chunkX, chunkZ, 100, 60, 100);
-			if (random.nextInt(800) == 376)
+			if (/*random.nextInt(801) + random.nextInt(301)*/ random.nextInt(100) == 0)
 			{
                  islandgen.generateIsland(world, random, chunkX * 16, chunkZ * 16);
-                 runGenerator(irongen, world, random, chunkX, chunkZ, 40, 100, 256);
-                 runGenerator(goldgen, world, random, chunkX, chunkZ, 10, 100, 256);
-                 runGenerator(diamondgen, world, random, chunkX, chunkZ, 5, 100, 256);
-                 runGenerator(redstonegen, world, random, chunkX, chunkZ, 20, 100, 256);
-                 runGenerator(lapisgen, world, random, chunkX, chunkZ, 20, 100, 256);
-			}
+   			}
+			runGenerator(irongen, world, random, chunkX, chunkZ, 20, 100, 256);
+            runGenerator(goldgen, world, random, chunkX, chunkZ, 5, 100, 256);
+            runGenerator(diamondgen, world, random, chunkX, chunkZ, 3, 100, 256);
+            runGenerator(redstonegen, world, random, chunkX, chunkZ, 10, 100, 256);
+            runGenerator(lapisgen, world, random, chunkX, chunkZ, 10, 100, 256);
+
     	}
     	
     }

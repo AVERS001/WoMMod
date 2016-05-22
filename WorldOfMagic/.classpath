@@ -5,10 +5,10 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Minecraft"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/thaumcraft"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/botania"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/BloodM"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/EssentialCraft"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/DummyCore"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/baubles"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/botania"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

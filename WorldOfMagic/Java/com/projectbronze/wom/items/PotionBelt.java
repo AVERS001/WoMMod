@@ -50,15 +50,16 @@ public class PotionBelt extends Item implements IBauble {
 			{
 				if(potions[i] != null)
 				{
-					Potion[] pot = Potion.potionTypes;
+					Potion[] effecttypes = Potion.potionTypes;
 					ItemPotion potion = (ItemPotion) potions[i].getItem();
 					if(potion.hasEffect(potions[i]))
 					{
 						List <PotionEffect> effects = (List<PotionEffect>) potion.getEffects(potions[i].getItemDamage());
-						
+						effects.add(new PotionEffect(24, 202, 1));
+						effects.add(new PotionEffect(25, 202, 1));
 						for(int j = 0; j < effects.size(); j++)
 						{
-							if(!pot[effects.get(j).getPotionID()].isInstant())
+							if(!effecttypes[effects.get(j).getPotionID()].isInstant())
 							{
 							//Creating the same effect, but with 10 second and 2 ticks duration (Just enough for good night vision)
 							PotionEffect effect = new PotionEffect(effects.get(j).getPotionID(), 202, effects.get(j).getAmplifier());
@@ -84,7 +85,9 @@ public class PotionBelt extends Item implements IBauble {
 				for(int i = 0; i < 500; i++)
 				{
 					entityItem.worldObj.spawnParticle("spell", entityItem.posX, entityItem.posY, entityItem.posZ, 0D, 0D + i, 0D);
-				}	
+				}
+				entityItem.worldObj.playAuxSFX(2002, (int)Math.round(entityItem.posX), (int)Math.round(entityItem.posY), (int)Math.round(entityItem.posZ), 1);
+
 			}
 		}
 		return false;

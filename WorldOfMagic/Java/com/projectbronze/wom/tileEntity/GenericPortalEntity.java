@@ -3,6 +3,7 @@ package com.projectbronze.wom.tileEntity;
 import java.util.List;
 
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
@@ -13,10 +14,10 @@ public class GenericPortalEntity extends TileEntity {
 		worldObj.spawnEntityInWorld(item);
 }
 	
-	private void port(World worldObj, int x, int y, int z, ItemStack inputitem, ItemStack retrunstack, List items)
+	private void port(World worldObj, int x, int y, int z, ItemStack inputitem, ItemStack retrunstack, List <EntityItem> items)
 	{
 		
-			EntityItem entity = (EntityItem) items.get(0);
+			EntityItem entity = items.get(0);
 			ItemStack input = entity.getEntityItem();
 			if(input.getUnlocalizedName().equals(inputitem.getUnlocalizedName()) && input.getItemDamage() == inputitem.getItemDamage())
 			{
@@ -44,10 +45,9 @@ public class GenericPortalEntity extends TileEntity {
 			}
 			else
 			{
-				List items = worldObj.getEntitiesWithinAABB(EntityItem.class, this.getRenderBoundingBox().expand(0.4, 0.4, 0.4));
+				List <EntityItem> items = worldObj.getEntitiesWithinAABB(EntityItem.class, this.getRenderBoundingBox().expand(0.1, 0.1, 0.1));
 				if(!items.isEmpty())
 				{
-					System.out.println("Item");
 						port(worldObj, x, y, z, input, output, items);			
 				}
 				ticksBeforeItem = 20;
