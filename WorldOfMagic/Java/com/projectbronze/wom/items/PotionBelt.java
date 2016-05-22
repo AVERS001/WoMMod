@@ -1,8 +1,8 @@
 package com.projectbronze.wom.items;
 
 import java.util.List;
+import java.util.Random;
 
-import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
@@ -59,9 +59,26 @@ public class PotionBelt extends Item implements IBauble {
 						{
 							if(!effecttypes[effects.get(j).getPotionID()].isInstant())
 							{
-							//Creating the same effect, but with 10 second and 2 ticks duration (Just enough for good night vision)
-							PotionEffect effect = new PotionEffect(effects.get(j).getPotionID(), 202, effects.get(j).getAmplifier());
-							player.addPotionEffect(effect);
+								//Creating the same effect, but with 10 second and 2 ticks duration (Just enough for good night vision)
+								PotionEffect effect = new PotionEffect(effects.get(j).getPotionID(), 202, effects.get(j).getAmplifier());
+								player.addPotionEffect(effect);
+								Random rand = new Random();
+								if(effects.get(j).getAmplifier() > 0)
+								{
+									if(rand.nextInt(70) + rand.nextInt(50) == 0)
+									{
+										PotionEffect poison = new PotionEffect(19, 1201, 1);
+										player.addPotionEffect(poison);
+									}
+								}
+								else
+								{
+									if(rand.nextInt(100) + rand.nextInt(100) == 0)
+									{
+										PotionEffect poison = new PotionEffect(19, 1201, 1);
+										player.addPotionEffect(poison);
+									}
+								}
 							}
 						}
 					}
