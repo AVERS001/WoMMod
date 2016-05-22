@@ -55,8 +55,6 @@ public class PotionBelt extends Item implements IBauble {
 					if(potion.hasEffect(potions[i]))
 					{
 						List <PotionEffect> effects = (List<PotionEffect>) potion.getEffects(potions[i].getItemDamage());
-						effects.add(new PotionEffect(24, 202, 1));
-						effects.add(new PotionEffect(25, 202, 1));
 						for(int j = 0; j < effects.size(); j++)
 						{
 							if(!effecttypes[effects.get(j).getPotionID()].isInstant())
