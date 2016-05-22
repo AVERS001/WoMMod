@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+import DummyCore.Utils.MiscUtils;
 
 import com.projectbronze.wom.core.WomCore;
 import com.projectbronze.wom.gui.GuiHandler;
@@ -33,6 +34,12 @@ public class BloodyCore extends GenericCore {
     	return true;
     }
 
-	
+	@Override
+    public void breakBlock(World world, int x, int y,
+    		int z, Block block, int par6) {
+    	MiscUtils.dropItemsOnBlockBreak(world, x, y, z, block, par6);
+    	super.breakBlock(world, x, y, z,
+    			block, par6);
+    }
 	 
 }

@@ -1,6 +1,7 @@
 package com.projectbronze.wom.registry;
 
 import net.minecraft.block.Block;
+import net.minecraft.item.ItemBlock;
 
 import com.projectbronze.wom.blocks.AngelSteelBlock;
 import com.projectbronze.wom.blocks.AuraCore;
@@ -9,10 +10,10 @@ import com.projectbronze.wom.blocks.BloodyCore;
 import com.projectbronze.wom.blocks.BloodyPortal;
 import com.projectbronze.wom.blocks.BotanCore;
 import com.projectbronze.wom.blocks.BotanPortal;
+import com.projectbronze.wom.blocks.DesertFlower;
 import com.projectbronze.wom.blocks.EssentialCore;
 import com.projectbronze.wom.blocks.EssentialPortal;
 import com.projectbronze.wom.blocks.ItemBlockMetaBlock;
-import com.projectbronze.wom.blocks.DesertFlower;
 import com.projectbronze.wom.blocks.ThaumCore;
 import com.projectbronze.wom.blocks.ThaumPortal;
 import com.projectbronze.wom.blocks.ThaumicFurnace;
@@ -50,7 +51,7 @@ public final class BlockRegistry {
 		GameRegistry.registerBlock(auraCore = new AuraCore("auraCore", auraPortal), "auraCore");
 		GameRegistry.registerBlock(essentialPortal = new EssentialPortal("essentialPortal"), ItemBlockMetaBlock.class, "essentialPortal");
 		GameRegistry.registerBlock(essentialCore = new EssentialCore("essentialCore", essentialPortal), "essentialCore");
-		GameRegistry.registerBlock(timeReturner = new TimeReturner("timeReturner"), "timeReturner");
+		GameRegistry.registerBlock(timeReturner = new TimeReturner("timeReturner"), ItemBlock.class, "timeReturner");
 		
 		
 		GameRegistry.registerBlock(desertFlower = new DesertFlower("DesertFlower"), "DesertFlower");

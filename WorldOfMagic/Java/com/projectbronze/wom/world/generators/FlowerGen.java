@@ -1,4 +1,4 @@
-package com.projectbronze.wom.world;
+package com.projectbronze.wom.world.generators;
 
 import java.util.Random;
 

@@ -1,11 +1,14 @@
 package com.projectbronze.wom.blocks;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import DummyCore.Utils.MiscUtils;
 
 import com.projectbronze.wom.core.WomCore;
 import com.projectbronze.wom.gui.GuiHandler;
@@ -16,29 +19,31 @@ public class TimeReturner extends BlockContainer {
 	public TimeReturner(String unlocName) {
 		super(Material.iron);
 		setBlockName(unlocName);
-		//setBlockTextureName(WomCore.modid + ":" + unlocName);
+		setBlockTextureName(WomCore.modid + ":" + unlocName);
 		setHardness(1.0F);
 		setCreativeTab(WomCore.tabWoM);
 	}
 
-	@Override
-    public boolean shouldSideBeRendered(IBlockAccess world, int x, int y, int z, int side)
-    {
-        return false;
-    }
- 
-    @Override
+
     public boolean isOpaqueCube()
     {
         return false;
     }
- 
-    @Override
+
     public boolean renderAsNormalBlock()
     {
         return false;
     }
- 
+    
+    @Override
+    public int getRenderBlockPass() {
+    	return 0;
+    }
+
+    public int getRenderType() {
+    	return 2634;
+    }
+    
     @Override
     public TileEntity createNewTileEntity(World world, int par2)
     {
@@ -54,5 +59,11 @@ public class TimeReturner extends BlockContainer {
     	return true;
     }
 
-
+    @Override
+    public void breakBlock(World world, int x, int y,
+    		int z, Block block, int par6) {
+    	MiscUtils.dropItemsOnBlockBreak(world, x, y, z, block, par6);
+    	super.breakBlock(world, x, y, z,
+    			block, par6);
+    }
 }
