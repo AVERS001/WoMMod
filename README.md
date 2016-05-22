@@ -1,5 +1,5 @@
 # WoMMod
-Spcial mod for world of magic modpack
+Special mod for world of magic modpack
 
 Dependencies:
 
