@@ -16,23 +16,28 @@ public class CraftItem extends Item {
 	public IIcon[] icons = new IIcon[12];
 	public static String modid = WomCore.modid;
 	private String textureName;
-	private int maxmeta = 1;
+	private int maxmeta = 0;
 	ArrayList<String> names = new ArrayList();
-	public CraftItem(String unlocName)
+	public CraftItem()
 	{
 		super();
-		this.setUnlocalizedName(unlocName);
 		this.setHasSubtypes(true);
 		this.setCreativeTab(WomCore.tabWoM);
-		textureName = unlocName;
-		setNoRepair();
-		names.add(unlocName);
 	}
 	
 	public void addCraftItem(String unlocName)
 	{
 		maxmeta++;
 		names.add(unlocName);
+	}
+	
+	public void addCraftItems(String[] names)
+	{
+		maxmeta += names.length;
+		for(int i = 0; i < names.length; i++)
+		{
+			this.names.add(names[i]);
+		}
 	}
 	
 	@Override
@@ -46,7 +51,7 @@ public class CraftItem extends Item {
 		public void registerIcons(IIconRegister reg) {
 			for(int i = 0; i < maxmeta; i++)
 			{
-				icons[i] = reg.registerIcon(modid + ":" + textureName + "_" + i);
+				icons[i] = reg.registerIcon(modid + ":" + names.get(i));
 			}
 		}
 		
