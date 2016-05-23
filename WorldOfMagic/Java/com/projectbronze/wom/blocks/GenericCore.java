@@ -43,7 +43,7 @@ public class GenericCore extends BlockContainer {
 				}
 			}
 		}
-		else if (world.getBlock(x, y + 1, z + 1) == portal)
+		if (world.getBlock(x, y + 1, z + 1) == portal)
 		{
 			for(int zCoord = z - 1; zCoord < z + 2; zCoord++)
 			{

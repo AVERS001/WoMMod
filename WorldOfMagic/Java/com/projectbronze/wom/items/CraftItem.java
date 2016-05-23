@@ -2,6 +2,7 @@ package com.projectbronze.wom.items;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map.Entry;
 
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -37,6 +38,17 @@ public class CraftItem extends Item {
 		for(int i = 0; i < names.length; i++)
 		{
 			this.names.add(names[i]);
+		}
+	}
+	
+	/**
+	 * Used to see meta of all craft items in debug.
+	 */
+	public void printMetaWithNames()
+	{
+		for(int i = 0; i < maxmeta; i++)
+		{
+			System.out.println(i + " - " + names.get(i));
 		}
 	}
 	

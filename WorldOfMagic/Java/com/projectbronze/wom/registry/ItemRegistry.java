@@ -17,7 +17,7 @@ public final class ItemRegistry {
 	public static Item potionBelt;
 	public static CraftItem craftItem;
 	public static TradeEditor tradeEditor;
-	private static String[] coins = {
+	private static final String[] coins = {
 		"CoinCopper", 
 		"CoinSilver",
 		"CoinGold"

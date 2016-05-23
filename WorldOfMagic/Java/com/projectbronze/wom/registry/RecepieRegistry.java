@@ -10,6 +10,10 @@ public class RecepieRegistry {
 
 	public static final void init()
 	{
-				
+				GameRegistry.addShapedRecipe(new ItemStack(ItemRegistry.craftItem, 1, 1), 
+				"###",
+				"###",
+				"###",
+				'#', new ItemStack(ItemRegistry.craftItem, 1, 0));
 	}
 }
