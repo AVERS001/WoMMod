@@ -14,7 +14,7 @@ import com.projectbronze.wom.core.WomCore;
 
 public class CraftItem extends Item {
 	
-	public IIcon[] icons = new IIcon[12];
+	public ArrayList<IIcon> icons = new ArrayList<IIcon>();
 	public static String modid = WomCore.modid;
 	private String textureName;
 	private int maxmeta = 0;
@@ -63,7 +63,7 @@ public class CraftItem extends Item {
 		public void registerIcons(IIconRegister reg) {
 			for(int i = 0; i < maxmeta; i++)
 			{
-				icons[i] = reg.registerIcon(modid + ":" + names.get(i));
+				icons.add(reg.registerIcon(modid + ":" + names.get(i)));
 			}
 		}
 		
@@ -72,7 +72,7 @@ public class CraftItem extends Item {
 		    if (meta > maxmeta)
 		        meta = 0;
 
-		    return this.icons[meta];
+		    return this.icons.get(meta);
 		}
 	
 	@Override

@@ -10,6 +10,7 @@ import com.projectbronze.wom.blocks.BloodyCore;
 import com.projectbronze.wom.blocks.BloodyPortal;
 import com.projectbronze.wom.blocks.BotanCore;
 import com.projectbronze.wom.blocks.BotanPortal;
+import com.projectbronze.wom.blocks.DecoBlock;
 import com.projectbronze.wom.blocks.DesertFlower;
 import com.projectbronze.wom.blocks.EssentialCore;
 import com.projectbronze.wom.blocks.EssentialPortal;
@@ -39,6 +40,11 @@ public final class BlockRegistry {
 	public static Block thaumicFurnace;
 	public static Block desertFlower;
 	public static Block tradeStation;
+	public static DecoBlock decoBlock;
+	private static String[] colors = {
+		"BlueBlock",
+		"RedBlock"
+	};
 	public static final void init()
 	{
 	
@@ -58,6 +64,10 @@ public final class BlockRegistry {
 		GameRegistry.registerBlock(tradeStation = new TradeStation("TradeStation"), "TradeStation");
 		GameRegistry.registerBlock(desertFlower = new DesertFlower("DesertFlower"), "DesertFlower");
 		GameRegistry.registerBlock(thaumicFurnace = new ThaumicFurnace("ThaumicFurnace"), "ThaumicFurnace");
+		decoBlock = new DecoBlock();
+		decoBlock.addDecoBlocks(colors);
+		GameRegistry.registerBlock(decoBlock, "DecoBlock");
+	
 	}
 
 	

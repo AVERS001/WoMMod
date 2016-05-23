@@ -24,7 +24,7 @@ public class DesertFlower extends BlockFlower
 
 
 	static HashSet<Block> blockSands = null;
-    
+    private IIcon[] icons = new IIcon[3];
     /**
      * @param meta
      */
@@ -49,25 +49,32 @@ public class DesertFlower extends BlockFlower
 		}
     }
     
+    
+    @Override
+    public int damageDropped(int meta) {
+    	return meta;
+    }
+    
     @Override
 	public void registerBlockIcons(IIconRegister reg){
-		this.blockIcon = reg.registerIcon(WomCore.modid + ":" + textureName);
+		for(int i = 0; i < 3; i++)
+		{
+			icons[i] = reg.registerIcon(WomCore.modid + ":DesertFlower-" + i);
+		}
 	}
     
     @Override
-	public IIcon getIcon(IBlockAccess p_149673_1_, int p_149673_2_, int p_149673_3_, int p_149673_4_, int p_149673_5_){
-		return this.blockIcon;
-	}
-    
-    @Override
-	public IIcon getIcon(int p_149691_1_, int p_149691_2_){
-		return blockIcon;
+	public IIcon getIcon(int side, int meta){
+		return icons[meta];
 	}
     
     @Override
 	public void getSubBlocks(Item item, CreativeTabs tab, List list){
-		list.add(new ItemStack(Item.getItemFromBlock(this), 1, 0));
-	}
+    	for(int i = 0; i < 3; i++)
+    	{
+    		list.add(new ItemStack(Item.getItemFromBlock(this), 1, i));
+    	}
+    }
 
     public boolean canGrowOn(World worldIn, int x, int y, int z) {
 		return canBlockStay(worldIn, x, y, z);

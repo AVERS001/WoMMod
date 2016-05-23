@@ -10,17 +10,11 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 public class FlowerGen extends WorldGenerator {
 
     private Block block;
-    private int blockmeta;
     private Block target;
 
-    public FlowerGen(Block block, int meta, Block target) {
-        this.block = block;
-        this.blockmeta = meta;
-        this.target = target;
-    }
-
     public FlowerGen(Block block, Block target) {
-        this(block, 0, target);
+        this.block = block;
+        this.target = target;
     }
 
     public FlowerGen(Block block) {
@@ -29,8 +23,8 @@ public class FlowerGen extends WorldGenerator {
 
     @Override
     public boolean generate(World world, Random random, int x, int y, int z) {
-        if (world.getBlock(x, y, z).isReplaceableOreGen(world, x, y, z, this.target) && world.getBlock(x, y - 1, z).equals(Blocks.sand))
-            world.setBlock(x, y, z, this.block, this.blockmeta, 2);
+        if (world.getBlock(x, y, z).isReplaceableOreGen(world, x, y, z, this.target) && block.canBlockStay(world, x, y - 1, z))
+            world.setBlock(x, y, z, this.block, random.nextInt(3), 2);
         return true;
     }
 }
