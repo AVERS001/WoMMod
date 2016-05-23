@@ -30,7 +30,7 @@ public class TradeTileEntity extends TileEntity implements IInventory {
 	public void updateEntity() {
 		if(!worldObj.isRemote)
 		{
-			if(inventory[2] != null && inventory[3] != null && inventory[0] != null && inventory[0].getItem().equals(inventory[2].getItem()) && inventory[0].getItemDamage() == inventory[2].getItemDamage())
+			if(inventory[2] != null && inventory[3] != null && inventory[0] != null && inventory[0].getItem().equals(inventory[2].getItem()) && inventory[0].getItemDamage() == inventory[2].getItemDamage() && inventory[0].stackSize >= inventory[2].stackSize)
 			{
 				int currentitems = 0;
 				if(getStackInSlot(1) != null)
@@ -38,8 +38,11 @@ public class TradeTileEntity extends TileEntity implements IInventory {
 					currentitems = getStackInSlot(1).stackSize;
 				}
 				int outstacksize = inventory[3].stackSize + currentitems;
-				setInventorySlotContents(1, new ItemStack(inventory[3].getItem(), outstacksize, inventory[3].getItemDamage()));
-				decrStackSize(0, inventory[2].stackSize);
+				if(outstacksize < 65)
+				{
+					setInventorySlotContents(1, new ItemStack(inventory[3].getItem(), outstacksize, inventory[3].getItemDamage()));
+					decrStackSize(0, inventory[2].stackSize);
+				}
 			}
 		}
 	}

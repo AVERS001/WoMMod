@@ -73,12 +73,9 @@ public class EditContainer extends Container {
 		            if (fromSlot < 4) {	      
 		                if (!this.mergeItemStack(current, 4, 37, true))
 		                    return null;
-		            } else {
-		            	if(BoundGemSlot.isBoundGem(current))
-		            	{		            		
+		            } else {		            		
 		            		if (!this.mergeItemStack(current, 2, 4, false))
 		            			return null;
-		            	}
 		            }
 	            if (current.stackSize == 0)
 	                slot.putStack((ItemStack) null);
