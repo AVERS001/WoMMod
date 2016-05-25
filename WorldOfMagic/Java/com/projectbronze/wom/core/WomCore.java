@@ -26,10 +26,11 @@ public class WomCore {
 		public static final int gameversion = 1710;
 		public static final int bugfixversion = 0;
 		public static final String version = globalversion + "." + minorversion + "." + gameversion + "." + bugfixversion;
-		
+		private static final String clientproxy = "com.projectbronze.wom.proxy.ClientProxy";
+		private static final String serverproxy = "com.projectbronze.wom.proxy.ServerProxy";
 		public static CreativeTabs tabWoM = new WoMTab("tabWoM");
 		
-		@SidedProxy(clientSide = "com.projectbronze.wom.proxy.ClientProxy", serverSide="com.projectbronze.wom.proxy.ServerProxy")
+		@SidedProxy(clientSide = clientproxy, serverSide= serverproxy)
 		public static CommonProxy proxy;
 		
 		@Instance(modid)

@@ -33,7 +33,7 @@ public class TimeReturnerRenderer extends TileEntitySpecialRenderer
         this.bindTexture(textures);
         model.renderAll();
         GL11.glPopMatrix();
-        RenderHelper.enableStandardItemLighting();
+        RenderHelper.enableGUIStandardItemLighting();
     }
 
     protected ResourceLocation getEntityTexture(TileEntity p_110775_1_)
