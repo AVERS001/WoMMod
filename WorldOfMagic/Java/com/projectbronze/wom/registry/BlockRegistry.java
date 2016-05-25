@@ -20,6 +20,8 @@ import com.projectbronze.wom.blocks.ThaumPortal;
 import com.projectbronze.wom.blocks.ThaumicFurnace;
 import com.projectbronze.wom.blocks.TimeReturner;
 import com.projectbronze.wom.blocks.TradeStation;
+import com.projectbronze.wom.blocks.TwilightCore;
+import com.projectbronze.wom.blocks.TwilightPortal;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -35,6 +37,8 @@ public final class BlockRegistry {
 	public static Block auraPortal;
 	public static Block essentialCore;
 	public static Block essentialPortal;
+	public static Block twilightCore;
+	public static Block twilightPortal;
 	public static Block timeReturner;
 	public static Block AngelSteelBlock;
 	public static Block thaumicFurnace;
@@ -68,6 +72,8 @@ public final class BlockRegistry {
 		register(AngelSteelBlock = new AngelSteelBlock("AngelSteelBlock"));
 		register(auraPortal = new AuraPortal("auraPortal"), ItemBlockMetaBlock.class);
 		register(auraCore = new AuraCore("auraCore", auraPortal));
+		register(twilightPortal = new TwilightPortal("twilightPortal"), ItemBlockMetaBlock.class);
+		register(twilightCore = new TwilightCore("twilightCore", twilightPortal));
 		register(essentialPortal = new EssentialPortal("essentialPortal"), ItemBlockMetaBlock.class);
 		register(essentialCore = new EssentialCore("essentialCore", essentialPortal));
 		register(timeReturner = new TimeReturner("timeReturner"), ItemBlock.class);

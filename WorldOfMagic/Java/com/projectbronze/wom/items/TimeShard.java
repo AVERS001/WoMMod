@@ -79,6 +79,11 @@ public class TimeShard extends Item {
 				name = "SHADE";
 				break;
 			}
+			case(5):
+			{
+				name = "Twilighte";
+				break;
+			}
 			default:
 			{
 				name = "meta-" + stack.getItemDamage() + "-";
