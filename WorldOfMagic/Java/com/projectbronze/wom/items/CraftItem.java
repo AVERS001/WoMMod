@@ -14,7 +14,7 @@ import com.projectbronze.wom.core.WomCore;
 
 public class CraftItem extends Item {
 	
-	public ArrayList<IIcon> icons = new ArrayList<IIcon>();
+	public IIcon[] icons;
 	public static String modid = WomCore.modid;
 	private String textureName;
 	private int maxmeta = 0;
@@ -24,6 +24,7 @@ public class CraftItem extends Item {
 		super();
 		this.setHasSubtypes(true);
 		this.setCreativeTab(WomCore.tabWoM);
+		setUnlocalizedName("CraftItem");
 	}
 	
 	public void addCraftItem(String unlocName)
@@ -34,10 +35,9 @@ public class CraftItem extends Item {
 	
 	public void addCraftItems(String[] names)
 	{
-		maxmeta += names.length;
-		for(int i = 0; i < names.length; i++)
+		for (int i = 0; i < names.length; i++)
 		{
-			this.names.add(names[i]);
+			addCraftItem(names[i]);
 		}
 	}
 	
@@ -61,9 +61,10 @@ public class CraftItem extends Item {
 	
 		@Override
 		public void registerIcons(IIconRegister reg) {
+			icons = new IIcon[maxmeta];
 			for(int i = 0; i < maxmeta; i++)
 			{
-				icons.add(reg.registerIcon(modid + ":" + names.get(i)));
+				icons[i] = reg.registerIcon(modid + ":" + names.get(i));
 			}
 		}
 		
@@ -72,7 +73,7 @@ public class CraftItem extends Item {
 		    if (meta > maxmeta)
 		        meta = 0;
 
-		    return this.icons.get(meta);
+		    return icons[meta];
 		}
 	
 	@Override

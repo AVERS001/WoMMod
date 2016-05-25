@@ -7,23 +7,36 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
+import net.minecraft.world.World;
 
 import com.projectbronze.wom.core.WomCore;
-/*
- * standart for portal blocks.
- */
+
 public class DecoBlock extends Block{
-	public ArrayList<IIcon> icons = new ArrayList<IIcon>();
+	public IIcon[] icons;
 	public int maxmeta = 0;
 	public ArrayList <String> names = new ArrayList();
 	public DecoBlock() {
 		super(Material.iron);
 		setCreativeTab(WomCore.tabWoM);
+		setBlockName("DecoBlock");
 	}
 
+	/**
+	 * Used to see meta of all decorative blocks in debug.
+	 */
+	public void printMetaWithNames()
+	{
+		for(int i = 0; i < maxmeta; i++)
+		{
+			System.out.println(i + " - " + names.get(i));
+		}
+	}
+	
+	
 	public void addDecoBlock(String unlocName)
 	{
 		maxmeta++;
@@ -38,6 +51,10 @@ public class DecoBlock extends Block{
 		}
 	}
 	
+	@Override
+	public String getUnlocalizedName() {
+		return "tile.DecoBlock";
+	}
 	
 	@Override
 	public int damageDropped(int meta) {
@@ -46,9 +63,10 @@ public class DecoBlock extends Block{
 	
 	@Override
 	public void registerBlockIcons(IIconRegister reg) {
+		icons = new IIcon[maxmeta];
 		for(int i = 0; i < maxmeta; i++)
 		{
-			icons.add(reg.registerIcon(WomCore.modid + ":" + names.get(i)));
+			icons[i] = reg.registerIcon(WomCore.modid + ":" + names.get(i));
 		}
 	}
 	
@@ -58,7 +76,7 @@ public class DecoBlock extends Block{
 		{
 			meta = maxmeta;
 		}
-		return icons.get(meta);
+		return icons[meta];
 	}
 	
 	@Override
@@ -67,5 +85,4 @@ public class DecoBlock extends Block{
 	        list.add(new ItemStack(item, 1, i));
 	    }
 	}
-	
 }

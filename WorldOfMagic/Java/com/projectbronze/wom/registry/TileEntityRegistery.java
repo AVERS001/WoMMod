@@ -1,5 +1,7 @@
 package com.projectbronze.wom.registry;
 
+import net.minecraft.tileentity.TileEntity;
+
 import com.projectbronze.wom.core.WomCore;
 import com.projectbronze.wom.tileEntity.AuraCoreEntity;
 import com.projectbronze.wom.tileEntity.AuraPortalEntity;
@@ -19,22 +21,26 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public final class TileEntityRegistery {
 	
+	public static void registerTile(Class<? extends TileEntity> te)
+	{
+		GameRegistry.registerTileEntity(te, WomCore.modid + "." + te.getName());
+	}
 	
 	public static final void init()
 	{
-		GameRegistry.registerTileEntity(ThaumCoreEntity.class, WomCore.modid + ".coreThaum");
-		GameRegistry.registerTileEntity(ThaumPortalEntity.class, WomCore.modid + ".portalThaum");
-		GameRegistry.registerTileEntity(BotanCoreEntity.class, WomCore.modid + ".coreBotan");
-		GameRegistry.registerTileEntity(BotanPortalEntity.class, WomCore.modid + ".portalBotan");
-		GameRegistry.registerTileEntity(BloodyCoreEntity.class, WomCore.modid + ".coreBloody");
-		GameRegistry.registerTileEntity(BloodyPortalEntity.class, WomCore.modid + ".portalBloody");
-		GameRegistry.registerTileEntity(AuraCoreEntity.class, WomCore.modid + ".coreAura");
-		GameRegistry.registerTileEntity(AuraPortalEntity.class, WomCore.modid + ".portalAura");
-		GameRegistry.registerTileEntity(EssentialCoreEntity.class, WomCore.modid + ".coreEssential");
-		GameRegistry.registerTileEntity(EssentialPortalEntity.class, WomCore.modid + ".portalEssential");
-		GameRegistry.registerTileEntity(TimeReturnerEntity.class, WomCore.modid + ".timeReturner");
-		GameRegistry.registerTileEntity(ThaumicFurnaceEntity.class, WomCore.modid + ".thaumicFurnace");
-		GameRegistry.registerTileEntity(TradeTileEntity.class, WomCore.modid + ".TradeStation");
+		registerTile(ThaumCoreEntity.class);
+		registerTile(ThaumPortalEntity.class);
+		registerTile(BotanCoreEntity.class);
+		registerTile(BotanPortalEntity.class);
+		registerTile(BloodyCoreEntity.class);
+		registerTile(BloodyPortalEntity.class);
+		registerTile(AuraCoreEntity.class);
+		registerTile(AuraPortalEntity.class);
+		registerTile(EssentialCoreEntity.class);
+		registerTile(EssentialPortalEntity.class);
+		registerTile(TimeReturnerEntity.class);
+		registerTile(ThaumicFurnaceEntity.class);
+		registerTile(TradeTileEntity.class);
 		
 	}
 	

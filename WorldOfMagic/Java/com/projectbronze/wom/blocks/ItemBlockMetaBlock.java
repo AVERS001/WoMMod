@@ -13,11 +13,6 @@ public class ItemBlockMetaBlock extends ItemBlockWithMetadata {
 
 	@Override
 	public String getUnlocalizedName(ItemStack item) {
-		if(item.getItem().equals(BlockRegistry.decoBlock))
-		{
-			DecoBlock block = (DecoBlock) Block.getBlockFromItem(item.getItem());
-			return block.names.get(item.getItemDamage());
-		}
 		return this.getUnlocalizedName() + "-" + item.getItemDamage();
 	}
 

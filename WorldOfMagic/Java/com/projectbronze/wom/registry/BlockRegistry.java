@@ -45,28 +45,38 @@ public final class BlockRegistry {
 		"BlueBlock",
 		"RedBlock"
 	};
+	
+	public static void register(Block block)
+	{
+		GameRegistry.registerBlock(block, block.getUnlocalizedName());
+	}
+	
+	public static void register(Block block, Class <? extends ItemBlock> itemblock)
+	{
+		GameRegistry.registerBlock(block, itemblock, block.getUnlocalizedName());
+	}
+	
 	public static final void init()
 	{
 	
-		GameRegistry.registerBlock(thaumPortal = new ThaumPortal("portalThaumPortal"), ItemBlockMetaBlock.class, "portalThaumPortal");
-		GameRegistry.registerBlock(thaumCore = new ThaumCore("portalThaum", thaumPortal), "portalThaum");
-		GameRegistry.registerBlock(botanPortal = new BotanPortal("portalBotanPortal"), ItemBlockMetaBlock.class, "portalBotanPortal");
-		GameRegistry.registerBlock(botanCore = new BotanCore("portalBotan", botanPortal), "portalBotan");
-		GameRegistry.registerBlock(BloodyPortal = new BloodyPortal("portalBloodyPortal"), ItemBlockMetaBlock.class, "portalBloodyPortal");
-		GameRegistry.registerBlock(bloodyCore = new BloodyCore("portalBloody", BloodyPortal), "portalBloody");
-		GameRegistry.registerBlock(AngelSteelBlock = new AngelSteelBlock("AngelSteelBlock"), "AngelSteelBlock");
-		GameRegistry.registerBlock(auraPortal = new AuraPortal("auraPortal"), ItemBlockMetaBlock.class, "auraPortal");
-		GameRegistry.registerBlock(auraCore = new AuraCore("auraCore", auraPortal), "auraCore");
-		GameRegistry.registerBlock(essentialPortal = new EssentialPortal("essentialPortal"), ItemBlockMetaBlock.class, "essentialPortal");
-		GameRegistry.registerBlock(essentialCore = new EssentialCore("essentialCore", essentialPortal), "essentialCore");
-		GameRegistry.registerBlock(timeReturner = new TimeReturner("timeReturner"), ItemBlock.class, "timeReturner");
-		
-		GameRegistry.registerBlock(tradeStation = new TradeStation("TradeStation"), "TradeStation");
-		GameRegistry.registerBlock(desertFlower = new DesertFlower("DesertFlower"), "DesertFlower");
-		GameRegistry.registerBlock(thaumicFurnace = new ThaumicFurnace("ThaumicFurnace"), "ThaumicFurnace");
+		register(thaumPortal = new ThaumPortal("portalThaumPortal"), ItemBlockMetaBlock.class);
+		register(thaumCore = new ThaumCore("portalThaum", thaumPortal));
+		register(botanPortal = new BotanPortal("portalBotanPortal"), ItemBlockMetaBlock.class);
+		register(botanCore = new BotanCore("portalBotan", botanPortal));
+		register(BloodyPortal = new BloodyPortal("portalBloodyPortal"), ItemBlockMetaBlock.class);
+		register(bloodyCore = new BloodyCore("portalBloody", BloodyPortal));
+		register(AngelSteelBlock = new AngelSteelBlock("AngelSteelBlock"));
+		register(auraPortal = new AuraPortal("auraPortal"), ItemBlockMetaBlock.class);
+		register(auraCore = new AuraCore("auraCore", auraPortal));
+		register(essentialPortal = new EssentialPortal("essentialPortal"), ItemBlockMetaBlock.class);
+		register(essentialCore = new EssentialCore("essentialCore", essentialPortal));
+		register(timeReturner = new TimeReturner("timeReturner"), ItemBlock.class);
+		register(tradeStation = new TradeStation("TradeStation"));
+		register(desertFlower = new DesertFlower("DesertFlower"));
+		register(thaumicFurnace = new ThaumicFurnace("ThaumicFurnace"));
 		decoBlock = new DecoBlock();
 		decoBlock.addDecoBlocks(colors);
-		GameRegistry.registerBlock(decoBlock, "DecoBlock");
+		register(decoBlock,  ItemBlockMetaBlock.class);
 	
 	}
 

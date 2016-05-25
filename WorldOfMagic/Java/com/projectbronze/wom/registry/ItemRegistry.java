@@ -22,14 +22,20 @@ public final class ItemRegistry {
 		"CoinSilver",
 		"CoinGold"
 	};
+	
+	public static void register(Item item)
+	{
+		GameRegistry.registerItem(item, item.getUnlocalizedName());
+	}
+	
 	public static final void init()
 	{
-		GameRegistry.registerItem(timeShard = new TimeShard("TimeShard"), "TimeShard");
-		GameRegistry.registerItem(potionBelt = new PotionBelt("PotionBelt"), "PotionBelt");
+		register(timeShard = new TimeShard("TimeShard"));
+		register(potionBelt = new PotionBelt("PotionBelt"));
 		craftItem = new CraftItem();
 		craftItem.addCraftItems(coins);
-		GameRegistry.registerItem(craftItem, "CraftItem");
-		GameRegistry.registerItem(tradeEditor = new TradeEditor("TradeEditor"), "TradeEditor");
+		register(craftItem);
+		register(tradeEditor = new TradeEditor("TradeEditor"));
 	}
 
 }
