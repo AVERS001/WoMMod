@@ -23,7 +23,7 @@ public class FlowerGen extends WorldGenerator {
 
     @Override
     public boolean generate(World world, Random random, int x, int y, int z) {
-        if (world.getBlock(x, y, z).isReplaceableOreGen(world, x, y, z, this.target) && block.canBlockStay(world, x, y - 1, z))
+        if (world.getBlock(x, y, z).isReplaceableOreGen(world, x, y, z, this.target) && block.canBlockStay(world, x, y, z))
             world.setBlock(x, y, z, this.block, random.nextInt(3), 2);
         return true;
     }

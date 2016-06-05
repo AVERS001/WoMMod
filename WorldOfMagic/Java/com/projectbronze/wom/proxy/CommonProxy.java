@@ -5,6 +5,7 @@ import com.projectbronze.wom.gui.GuiHandler;
 import com.projectbronze.wom.registry.BlockRegistry;
 import com.projectbronze.wom.registry.ItemRegistry;
 import com.projectbronze.wom.registry.RecepieRegistry;
+import com.projectbronze.wom.registry.ThaumRecipeRegistry;
 import com.projectbronze.wom.registry.TileEntityRegistery;
 import com.projectbronze.wom.world.WomWorldGenerator;
 
@@ -21,18 +22,17 @@ public class CommonProxy{
 	{
 		BlockRegistry.init();
 		ItemRegistry.init();
-		RecepieRegistry.init();
 		TileEntityRegistery.init();
 	}
 	
 	public void init(FMLInitializationEvent e)
 	{
+		RecepieRegistry.init();
 		GameRegistry.registerWorldGenerator(new WomWorldGenerator(), 0);
-		NetworkRegistry.INSTANCE.registerGuiHandler(WomCore.instance, new GuiHandler());
 	}
 	
 	public void postInit(FMLPostInitializationEvent e)
 	{
-		
+		ThaumRecipeRegistry.init();
 	}
 }

@@ -32,8 +32,6 @@ public class DesertFlower extends BlockFlower
     {
     	super(1);
         setCreativeTab(WomCore.tabWoM);
-        setBlockName("TestFlower");
-        setBlockTextureName("TestFlower");
         setBlockName(name);
 		setBlockTextureName(name);
 		if(blockSands == null)

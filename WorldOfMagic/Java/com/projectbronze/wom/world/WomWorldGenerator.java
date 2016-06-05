@@ -2,15 +2,17 @@ package com.projectbronze.wom.world;
 
 import java.util.Random;
 
-import com.projectbronze.wom.registry.BlockRegistry;
-import com.projectbronze.wom.world.generators.FlowerGen;
-import com.projectbronze.wom.world.generators.IslandGen;
-
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenerator;
+
+import com.projectbronze.wom.registry.BlockRegistry;
+import com.projectbronze.wom.world.generators.CloudGen;
+import com.projectbronze.wom.world.generators.FlowerGen;
+import com.projectbronze.wom.world.generators.IslandGen;
+
 import cpw.mods.fml.common.IWorldGenerator;
 
 
@@ -18,6 +20,7 @@ public class WomWorldGenerator implements IWorldGenerator {
 	private WorldGenerator flowergen;
 	private IslandGen islandgen;
 	private WorldGenMinable irongen, goldgen, diamondgen, redstonegen, emeraldgen, lapisgen;
+	private CloudGen smallcloud, mediumcloud, largecloud, hugecloud;
 	
 	public WomWorldGenerator() {
 		flowergen = new FlowerGen(BlockRegistry.desertFlower);
@@ -27,6 +30,10 @@ public class WomWorldGenerator implements IWorldGenerator {
 		diamondgen = new WorldGenMinable(Blocks.diamond_ore, 10);
 		redstonegen = new WorldGenMinable(Blocks.redstone_ore, 20);
 		lapisgen = new WorldGenMinable(Blocks.lapis_ore, 10);
+		smallcloud = new CloudGen(BlockRegistry.cloudBlock, 0, 10, false);
+        mediumcloud = new CloudGen(BlockRegistry.cloudBlock, 0, 20, false);
+        largecloud = new CloudGen(BlockRegistry.cloudBlock, 0, 30, false);
+        hugecloud = new CloudGen(BlockRegistry.cloudBlock, 0, 40, false);
 	}
 	
 	@Override
@@ -43,7 +50,20 @@ public class WomWorldGenerator implements IWorldGenerator {
             runGenerator(diamondgen, world, random, chunkX, chunkZ, 3, 100, 256);
             runGenerator(redstonegen, world, random, chunkX, chunkZ, 10, 100, 256);
             runGenerator(lapisgen, world, random, chunkX, chunkZ, 10, 100, 256);
-
+            int xChunk = chunkX * 16 + 8, zChunk = chunkZ * 16 + 8;
+            int xCh = xChunk + random.nextInt(16);
+            int zCh = zChunk + random.nextInt(16);
+            int yCh = random.nextInt(107) + 150;
+            int size = random.nextInt(13);
+            if (size < 5) {
+                smallcloud.generate(world, random, xCh, yCh, zCh);
+            } else if (size < 9) {
+                mediumcloud.generate(world, random, xCh, yCh, zCh);
+            } else if (size < 11) {
+                largecloud.generate(world, random, xCh, yCh, zCh);
+            } else {
+                hugecloud.generate(world, random, xCh, yCh, zCh);
+            }
     	}
     	
     }

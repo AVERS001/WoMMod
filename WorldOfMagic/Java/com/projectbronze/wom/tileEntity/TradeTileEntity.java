@@ -7,18 +7,64 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
-
-import com.projectbronze.wom.registry.ItemRegistry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class TradeTileEntity extends TileEntity implements IInventory {
 
 	
-	@Override
-    public AxisAlignedBB getRenderBoundingBox() {
-        double d0 = 5.0D;
-        AxisAlignedBB axisalignedbb = AxisAlignedBB.getBoundingBox((double)xCoord, (double)yCoord, (double)zCoord, (double)xCoord + 1.0D, (double)yCoord + 1.0D, (double)zCoord + 1.0D).expand(d0, d0, d0);
-        return axisalignedbb;    
-    }
+	 private boolean flag = true;
+	    
+	    @SideOnly(Side.CLIENT)
+		private long time;
+	    @SideOnly(Side.CLIENT)
+	    private float f;
+	    
+	    @SideOnly(Side.CLIENT)
+	    public double getMaxRenderDistanceSquared()
+	    {
+	        return 65536.0D;
+	    }
+	    
+	    @Override
+		@SideOnly(Side.CLIENT)
+		public AxisAlignedBB getRenderBoundingBox()
+		{
+			return INFINITE_EXTENT_AABB;
+		}
+
+		@SideOnly(Side.CLIENT)
+	    public float func_146002_i()
+	    {
+	        if (!this.flag )
+	        {
+	            return 0.0F;
+	        }
+	        else
+	        {
+	            int i = (int)(this.worldObj.getTotalWorldTime() - this.time);
+	            this.time = this.worldObj.getTotalWorldTime();
+
+	            if (i > 1)
+	            {
+	                this.f -= (float)i / 40.0F;
+
+	                if (this.f < 0.0F)
+	                {
+	                    this.f = 0.0F;
+	                }
+	            }
+
+	            this.f += 0.025F;
+
+	            if (this.f > 1.0F)
+	            {
+	                this.f = 1.0F;
+	            }
+
+	            return this.f;
+	        }
+	    }
 	
 	public ItemStack[] inventory;
 	@Override
@@ -30,7 +76,7 @@ public class TradeTileEntity extends TileEntity implements IInventory {
 	public void updateEntity() {
 		if(!worldObj.isRemote)
 		{
-			if(inventory[2] != null && inventory[3] != null && inventory[0] != null && inventory[0].getItem().equals(inventory[2].getItem()) && inventory[0].getItemDamage() == inventory[2].getItemDamage() && inventory[0].stackSize >= inventory[2].stackSize)
+			if(inventory[2] != null && inventory[3] != null && inventory[0] != null && !inventory[2].hasTagCompound())
 			{
 				int currentitems = 0;
 				if(getStackInSlot(1) != null)
@@ -40,7 +86,9 @@ public class TradeTileEntity extends TileEntity implements IInventory {
 				int outstacksize = inventory[3].stackSize + currentitems;
 				if(outstacksize < 65)
 				{
-					setInventorySlotContents(1, new ItemStack(inventory[3].getItem(), outstacksize, inventory[3].getItemDamage()));
+					ItemStack out = inventory[3].copy();
+					out.stackSize = outstacksize;
+					setInventorySlotContents(1, out);
 					decrStackSize(0, inventory[2].stackSize);
 				}
 			}

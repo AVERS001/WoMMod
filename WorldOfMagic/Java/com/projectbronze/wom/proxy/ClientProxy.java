@@ -3,6 +3,8 @@ package com.projectbronze.wom.proxy;
 
 import com.projectbronze.wom.tileEntity.TimeReturnerEntity;
 import com.projectbronze.wom.tileEntity.TimeReturnerRenderer;
+import com.projectbronze.wom.tileEntity.TradeRenderer;
+import com.projectbronze.wom.tileEntity.TradeTileEntity;
 
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -22,6 +24,7 @@ public class ClientProxy extends CommonProxy {
 	public void init(FMLInitializationEvent e) {
 		super.init(e);
 		ClientRegistry.bindTileEntitySpecialRenderer(TimeReturnerEntity.class, new TimeReturnerRenderer());
+		ClientRegistry.bindTileEntitySpecialRenderer(TradeTileEntity.class, new TradeRenderer());
 	}
 
 	@Override

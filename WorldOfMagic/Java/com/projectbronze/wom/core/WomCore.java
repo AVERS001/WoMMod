@@ -1,8 +1,10 @@
 package com.projectbronze.wom.core;
 
+import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 
 import com.projectbronze.wom.creativetabs.WoMTab;
+import com.projectbronze.wom.material.Cloud;
 import com.projectbronze.wom.proxy.CommonProxy;
 
 import cpw.mods.fml.common.Mod;
@@ -17,7 +19,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 
 
-@Mod(useMetadata = false, name = WomCore.name, modid = WomCore.modid, version = WomCore.version)
+@Mod(useMetadata = false, name = WomCore.name, modid = WomCore.modid, version = WomCore.version, dependencies = "required-after:essentialcraft")
 public class WomCore {
 		public static final String name = "World of Magic Mod";
 		public static final String modid = "wommod";
@@ -29,7 +31,7 @@ public class WomCore {
 		private static final String clientproxy = "com.projectbronze.wom.proxy.ClientProxy";
 		private static final String serverproxy = "com.projectbronze.wom.proxy.ServerProxy";
 		public static CreativeTabs tabWoM = new WoMTab("tabWoM");
-		
+		public static Material cloud = new Cloud();
 		@SidedProxy(clientSide = clientproxy, serverSide= serverproxy)
 		public static CommonProxy proxy;
 		

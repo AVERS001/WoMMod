@@ -17,11 +17,6 @@ public final class ItemRegistry {
 	public static Item potionBelt;
 	public static CraftItem craftItem;
 	public static TradeEditor tradeEditor;
-	private static final String[] coins = {
-		"CoinCopper", 
-		"CoinSilver",
-		"CoinGold"
-	};
 	
 	public static void register(Item item)
 	{
@@ -32,10 +27,32 @@ public final class ItemRegistry {
 	{
 		register(timeShard = new TimeShard("TimeShard"));
 		register(potionBelt = new PotionBelt("PotionBelt"));
-		craftItem = new CraftItem();
-		craftItem.addCraftItems(coins);
-		register(craftItem);
+		registerCraftItems();
 		register(tradeEditor = new TradeEditor("TradeEditor"));
 	}
 
+	
+	public static void registerCraftItems()
+	{
+		String[] plates =
+		{
+			"AluminumBrass",
+			"Alumite",
+			"Ardite",
+			"Bronze",
+			"Cobalt",
+			"Copper",
+			"Manyullyn",
+			"Obsidian",
+			"Steel",
+			"Tin",
+		};
+		for(int i = 0; i < plates.length; i++)
+		{
+			plates[i] = "plate" + plates[i];
+		}
+		craftItem = new CraftItem();
+		craftItem.addCraftItems(plates);
+		register(craftItem);
+	}
 }

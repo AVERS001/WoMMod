@@ -10,6 +10,7 @@ import com.projectbronze.wom.blocks.BloodyCore;
 import com.projectbronze.wom.blocks.BloodyPortal;
 import com.projectbronze.wom.blocks.BotanCore;
 import com.projectbronze.wom.blocks.BotanPortal;
+import com.projectbronze.wom.blocks.CloudBlock;
 import com.projectbronze.wom.blocks.DecoBlock;
 import com.projectbronze.wom.blocks.DesertFlower;
 import com.projectbronze.wom.blocks.EssentialCore;
@@ -44,11 +45,8 @@ public final class BlockRegistry {
 	public static Block thaumicFurnace;
 	public static Block desertFlower;
 	public static Block tradeStation;
-	public static DecoBlock decoBlock;
-	private static String[] colors = {
-		"BlueBlock",
-		"RedBlock"
-	};
+	//public static DecoBlock decoBlock;
+	public static Block cloudBlock;
 	
 	public static void register(Block block)
 	{
@@ -78,11 +76,11 @@ public final class BlockRegistry {
 		register(essentialCore = new EssentialCore("essentialCore", essentialPortal));
 		register(timeReturner = new TimeReturner("timeReturner"), ItemBlock.class);
 		register(tradeStation = new TradeStation("TradeStation"));
-		register(desertFlower = new DesertFlower("DesertFlower"));
+		register(desertFlower = new DesertFlower("DesertFlower"), ItemBlockMetaBlock.class);
 		register(thaumicFurnace = new ThaumicFurnace("ThaumicFurnace"));
-		decoBlock = new DecoBlock();
-		decoBlock.addDecoBlocks(colors);
-		register(decoBlock,  ItemBlockMetaBlock.class);
+		//decoBlock = new DecoBlock();
+		//register(decoBlock,  ItemBlockMetaBlock.class);
+		register(cloudBlock = new CloudBlock("CloudBlock"));
 	
 	}
 

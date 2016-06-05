@@ -1,8 +1,8 @@
 package com.projectbronze.wom.tileEntity;
 
-import twilightforest.block.TFBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
+import twilightforest.block.TFBlocks;
 
 import com.projectbronze.wom.registry.BlockRegistry;
 public class TwilightCoreEntity extends GenericCoreEntity{

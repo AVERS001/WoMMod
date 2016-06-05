@@ -7,8 +7,8 @@ import com.projectbronze.wom.registry.ItemRegistry;
 
 public class WoMTab extends CreativeTabs{
 	
-	public WoMTab(String lable) {
-		super(lable);
+	public WoMTab(String label) {
+		super(label);
 	}
 	
 	
