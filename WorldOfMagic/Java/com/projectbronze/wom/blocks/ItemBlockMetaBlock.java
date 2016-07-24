@@ -1,18 +1,19 @@
 package com.projectbronze.wom.blocks;
 
-import com.projectbronze.wom.registry.BlockRegistry;
-
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlockWithMetadata;
 import net.minecraft.item.ItemStack;
 
-public class ItemBlockMetaBlock extends ItemBlockWithMetadata {
-	public ItemBlockMetaBlock(Block block) {
+public class ItemBlockMetaBlock extends ItemBlockWithMetadata
+{
+	public ItemBlockMetaBlock(Block block)
+	{
 		super(block, block);
 	}
 
 	@Override
-	public String getUnlocalizedName(ItemStack item) {
+	public String getUnlocalizedName(ItemStack item)
+	{
 		return this.getUnlocalizedName() + "-" + item.getItemDamage();
 	}
 

@@ -17,76 +17,83 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.oredict.OreDictionary;
 
-import com.projectbronze.wom.core.WomCore;
+import com.projectbronze.wom.core.Core;
 
 public class DesertFlower extends BlockFlower
 {
 
-
 	static HashSet<Block> blockSands = null;
-    private IIcon[] icons = new IIcon[3];
-    /**
-     * @param meta
-     */
-    public DesertFlower(String name)
-    {
-    	super(1);
-        setCreativeTab(WomCore.tabWoM);
-        setBlockName(name);
+	private IIcon[] icons = new IIcon[3];
+
+	/**
+	 * @param meta
+	 */
+	public DesertFlower(String name)
+	{
+		super(1);
+		setCreativeTab(Core.tabWoM);
+		setBlockName(name);
 		setBlockTextureName(name);
-		if(blockSands == null)
+		if (blockSands == null)
 		{
 			Collection<ItemStack> itemStackSands = OreDictionary.getOres("sand", false);
 			blockSands = new HashSet<Block>(itemStackSands.size());
-			for (ItemStack itemStack : itemStackSands){
+			for (ItemStack itemStack : itemStackSands)
+			{
 				Block oreBlock = Block.getBlockFromItem(itemStack.getItem());
-				if (oreBlock != Blocks.air){
+				if (oreBlock != Blocks.air)
+				{
 					blockSands.add(oreBlock);
 				}
 			}
 		}
-    }
-    
-    
-    @Override
-    public int damageDropped(int meta) {
-    	return meta;
-    }
-    
-    @Override
-	public void registerBlockIcons(IIconRegister reg){
-		for(int i = 0; i < 3; i++)
+	}
+
+	@Override
+	public int damageDropped(int meta)
+	{
+		return meta;
+	}
+
+	@Override
+	public void registerBlockIcons(IIconRegister reg)
+	{
+		for (int i = 0; i < 3; i++)
 		{
-			icons[i] = reg.registerIcon(WomCore.modid + ":DesertFlower-" + i);
+			icons[i] = reg.registerIcon(Core.modid + ":DesertFlower-" + i);
 		}
 	}
-    
-    @Override
-	public IIcon getIcon(int side, int meta){
+
+	@Override
+	public IIcon getIcon(int side, int meta)
+	{
 		return icons[meta];
 	}
-    
-    @Override
-	public void getSubBlocks(Item item, CreativeTabs tab, List list){
-    	for(int i = 0; i < 3; i++)
-    	{
-    		list.add(new ItemStack(Item.getItemFromBlock(this), 1, i));
-    	}
-    }
 
-    public boolean canGrowOn(World worldIn, int x, int y, int z) {
+	@Override
+	public void getSubBlocks(Item item, CreativeTabs tab, List list)
+	{
+		for (int i = 0; i < 3; i++)
+		{
+			list.add(new ItemStack(Item.getItemFromBlock(this), 1, i));
+		}
+	}
+
+	public boolean canGrowOn(World worldIn, int x, int y, int z)
+	{
 		return canBlockStay(worldIn, x, y, z);
 	}
-    
-    @Override
-    protected boolean canPlaceBlockOn(Block block) {
-    	return block == Blocks.sand || blockSands != null && blockSands.contains(block); 
-    }
 
-    @Override
-    public EnumPlantType getPlantType(IBlockAccess world, int x, int y, int z) {
-    	return EnumPlantType.Desert;
-    }
-    
+	@Override
+	protected boolean canPlaceBlockOn(Block block)
+	{
+		return block == Blocks.sand || blockSands != null && blockSands.contains(block);
+	}
+
+	@Override
+	public EnumPlantType getPlantType(IBlockAccess world, int x, int y, int z)
+	{
+		return EnumPlantType.Desert;
+	}
+
 }
-

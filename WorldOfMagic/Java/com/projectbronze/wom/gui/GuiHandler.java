@@ -25,8 +25,8 @@ import com.projectbronze.wom.tileEntity.TradeTileEntity;
 
 import cpw.mods.fml.common.network.IGuiHandler;
 
-public class GuiHandler implements IGuiHandler {
-
+public class GuiHandler implements IGuiHandler
+{
 	public static final int TimeRetrunerID = 0;
 	public static final int BloodyPortalID = 1;
 	public static final int ThaumicFurnaceID = 2;
@@ -34,81 +34,84 @@ public class GuiHandler implements IGuiHandler {
 	public static final int PotionBeltID = 4;
 	public static final int TradeID = 5;
 	public static final int EditModeID = 6;
-    @Override
-    public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
-        switch (ID)
-        {
-        case(TimeRetrunerID):
-        {
-        	return new TimeReturnerContainer(player.inventory, (TimeReturnerEntity) world.getTileEntity(x, y, z));
-        }
-        case(BloodyPortalID):
-        {
-        	return new BloodyPortalContainer(player.inventory, (BloodyCoreEntity) world.getTileEntity(x, y, z));
-        }
-        case(ThaumicFurnaceID):
-        {
-        	return new ThaumicFuranceContainer(player.inventory, (ThaumicFurnaceEntity) world.getTileEntity(x, y, z));
-        }
-        case(EssentialCoreID):
-        {
-        	return new EssentialCoreContainer(player.inventory, (EssentialCoreEntity) world.getTileEntity(x, y, z));
-        }
-        case(PotionBeltID):
-        {
-        	return new PotionBeltContainer(player);
-        }
-        case(TradeID):
-        {
-        	return new TradeContainer(player.inventory, (TradeTileEntity) world.getTileEntity(x, y, z));
-        }
-        case(EditModeID):
-        {
-        	return new EditContainer(player.inventory, (TradeTileEntity) world.getTileEntity(x, y, z));
-        }
-        default:
-        {
-        		return null;
-        }
-        }
-    }
 
-    @Override
-    public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
-    	switch (ID)
-        {
-        case(TimeRetrunerID):
-        {
-        	return new TimeReturnerGUI(player.inventory, (TimeReturnerEntity) world.getTileEntity(x, y, z));
-        }
-        case(BloodyPortalID):
-        {
-        	return new BloodyCoreGUI(player.inventory, (BloodyCoreEntity) world.getTileEntity(x, y, z));
-        }
-        case(ThaumicFurnaceID):
-        {
-        	return new ThaumicFurnaceGUI(player.inventory, (ThaumicFurnaceEntity) world.getTileEntity(x, y, z));
-        }
-        case(EssentialCoreID):
-        {
-        	return new EssentialCoreGUI(player.inventory, (EssentialCoreEntity) world.getTileEntity(x, y, z));
-        }
-        case(PotionBeltID):
-        {
-        	return new PotionBeltGUI(player);
-        }
-        case(TradeID):
-        {
-        	return new TradeGUI(player.inventory, (TradeTileEntity) world.getTileEntity(x, y, z));
-        }
-        case(EditModeID):
-        {
-        	return new EditGUI(player.inventory, (TradeTileEntity) world.getTileEntity(x, y, z));
-        }
-        default:
-        {
-        		return null;
-        }
-        }
-    }
+	@Override
+	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z)
+	{
+		switch (ID)
+		{
+			case (TimeRetrunerID):
+			{
+				return new TimeReturnerContainer(player.inventory, (TimeReturnerEntity) world.getTileEntity(x, y, z));
+			}
+			case (BloodyPortalID):
+			{
+				return new BloodyPortalContainer(player.inventory, (BloodyCoreEntity) world.getTileEntity(x, y, z));
+			}
+			case (ThaumicFurnaceID):
+			{
+				return new ThaumicFuranceContainer(player.inventory, (ThaumicFurnaceEntity) world.getTileEntity(x, y, z));
+			}
+			case (EssentialCoreID):
+			{
+				return new EssentialCoreContainer(player.inventory, (EssentialCoreEntity) world.getTileEntity(x, y, z));
+			}
+			case (PotionBeltID):
+			{
+				return new PotionBeltContainer(player);
+			}
+			case (TradeID):
+			{
+				return new TradeContainer(player.inventory, (TradeTileEntity) world.getTileEntity(x, y, z));
+			}
+			case (EditModeID):
+			{
+				return new EditContainer(player.inventory, (TradeTileEntity) world.getTileEntity(x, y, z));
+			}
+			default:
+			{
+				return null;
+			}
+		}
+	}
+
+	@Override
+	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z)
+	{
+		switch (ID)
+		{
+			case (TimeRetrunerID):
+			{
+				return new TimeReturnerGUI(player.inventory, (TimeReturnerEntity) world.getTileEntity(x, y, z));
+			}
+			case (BloodyPortalID):
+			{
+				return new BloodyCoreGUI(player.inventory, (BloodyCoreEntity) world.getTileEntity(x, y, z));
+			}
+			case (ThaumicFurnaceID):
+			{
+				return new ThaumicFurnaceGUI(player.inventory, (ThaumicFurnaceEntity) world.getTileEntity(x, y, z));
+			}
+			case (EssentialCoreID):
+			{
+				return new EssentialCoreGUI(player.inventory, (EssentialCoreEntity) world.getTileEntity(x, y, z));
+			}
+			case (PotionBeltID):
+			{
+				return new PotionBeltGUI(player);
+			}
+			case (TradeID):
+			{
+				return new TradeGUI(player.inventory, (TradeTileEntity) world.getTileEntity(x, y, z));
+			}
+			case (EditModeID):
+			{
+				return new EditGUI(player.inventory, (TradeTileEntity) world.getTileEntity(x, y, z));
+			}
+			default:
+			{
+				return null;
+			}
+		}
+	}
 }

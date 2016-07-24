@@ -5,125 +5,26 @@
  R4wk, ZeuX, IngisKahn, bspkrs
  MCP Data version : unknown
 ****************************
-Found AccessTransformer in main resources: backlytra_at.cfg
-:downloadClient SKIPPED
-:downloadServer SKIPPED
-:getVersionJson
-:extractUserDev UP-TO-DATE
-:mergeJars SKIPPED
-:applyBinPatches SKIPPED
-:downloadMcpTools SKIPPED
-:extractMcpData UP-TO-DATE
-:genSrgs SKIPPED
-:deobfBinJar UP-TO-DATE
 :compileApiJava UP-TO-DATE
 :processApiResources UP-TO-DATE
 :apiClasses UP-TO-DATE
 :sourceMainJava
-:compileJavawarning: [options] bootstrap class path not set in conjunction with -source 1.6
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\ec3\client\render\RenderDemon.java:130: warning: doRender(EntityLivingBase,double,double,double,float,float) in RenderDemon overrides doRender(EntityLivingBase,double,double,double,float,float) in RenderLiving; overridden method is a bridge method
-    public void doRender(EntityLivingBase p_76986_1_, double p_76986_2_, double p_76986_4_, double p_76986_6_, float p_76986_8_, float p_76986_9_)
-                ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\ec3\client\render\RenderDemon.java:149: warning: doRender(Entity,double,double,double,float,float) in RenderDemon overrides doRender(Entity,double,double,double,float,float) in RenderLiving; overridden method is a bridge method
-    public void doRender(Entity p_76986_1_, double p_76986_2_, double p_76986_4_, double p_76986_6_, float p_76986_8_, float p_76986_9_)
-                ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\ec3\client\render\RenderHologram.java:51: warning: doRender(Entity,double,double,double,float,float) in RenderHologram overrides doRender(Entity,double,double,double,float,float) in RenderLiving; overridden method is a bridge method
-    public void doRender(Entity p_76986_1_, double p_76986_2_, double p_76986_4_, double p_76986_6_, float p_76986_8_, float p_76986_9_)
-                ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\ec3\client\render\RenderPlayerClone.java:44: warning: doRender(Entity,double,double,double,float,float) in RenderPlayerClone overrides doRender(Entity,double,double,double,float,float) in RenderLiving; overridden method is a bridge method
-    public void doRender(Entity p_76986_1_, double p_76986_2_, double p_76986_4_, double p_76986_6_, float p_76986_8_, float p_76986_9_)
-                ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\ec3\client\render\RenderPoisonFume.java:111: warning: doRender(EntityLivingBase,double,double,double,float,float) in RenderPoisonFume overrides doRender(EntityLivingBase,double,double,double,float,float) in RenderLiving; overridden method is a bridge method
-    public void doRender(EntityLivingBase p_76986_1_, double p_76986_2_, double p_76986_4_, double p_76986_6_, float p_76986_8_, float p_76986_9_)
-                ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\ec3\client\render\RenderPoisonFume.java:130: warning: doRender(Entity,double,double,double,float,float) in RenderPoisonFume overrides doRender(Entity,double,double,double,float,float) in RenderLiving; overridden method is a bridge method
-    public void doRender(Entity p_76986_1_, double p_76986_2_, double p_76986_4_, double p_76986_6_, float p_76986_8_, float p_76986_9_)
-                ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\ec3\client\render\RenderWindMage.java:122: warning: doRender(EntityLivingBase,double,double,double,float,float) in RenderWindMage overrides doRender(EntityLivingBase,double,double,double,float,float) in RenderLiving; overridden method is a bridge method
-    public void doRender(EntityLivingBase p_76986_1_, double p_76986_2_, double p_76986_4_, double p_76986_6_, float p_76986_8_, float p_76986_9_)
-                ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\ec3\client\render\RenderWindMage.java:141: warning: doRender(Entity,double,double,double,float,float) in RenderWindMage overrides doRender(Entity,double,double,double,float,float) in RenderLiving; overridden method is a bridge method
-    public void doRender(Entity p_76986_1_, double p_76986_2_, double p_76986_4_, double p_76986_6_, float p_76986_8_, float p_76986_9_)
-                ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\twilightforest\client\renderer\entity\RenderTFBighorn.java:20: warning: getEntityTexture(Entity) in RenderTFBighorn overrides getEntityTexture(Entity) in RenderSheep; overridden method is a bridge method
-    protected ResourceLocation getEntityTexture(Entity par1Entity)
-                               ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\twilightforest\client\renderer\entity\RenderTFBird.java:57: warning: doRender(Entity,double,double,double,float,float) in RenderTFBird overrides doRender(Entity,double,double,double,float,float) in RenderLiving; overridden method is a bridge method
-    public void doRender(Entity par1Entity, double par2, double par4, double par6, float par8, float par9)
-                ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\twilightforest\client\renderer\entity\RenderTFBlockGoblin.java:23: warning: doRender(Entity,double,double,double,float,float) in RenderTFBlockGoblin overrides doRender(Entity,double,double,double,float,float) in RenderLiving; overridden method is a bridge method
-	public void doRender(Entity entity, double d, double d1, double d2, float f, float f1) {
-	            ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\twilightforest\client\renderer\entity\RenderTFBoar.java:20: warning: getEntityTexture(Entity) in RenderTFBoar overrides getEntityTexture(Entity) in RenderPig; overridden method is a bridge method
-    protected ResourceLocation getEntityTexture(Entity par1Entity)
-                               ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\twilightforest\client\renderer\entity\RenderTFDeer.java:19: warning: getEntityTexture(Entity) in RenderTFDeer overrides getEntityTexture(Entity) in RenderCow; overridden method is a bridge method
-    protected ResourceLocation getEntityTexture(Entity par1Entity)
-                               ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\twilightforest\client\renderer\entity\RenderTFHedgeSpider.java:13: warning: getEntityTexture(Entity) in RenderTFHedgeSpider overrides getEntityTexture(Entity) in RenderSpider; overridden method is a bridge method
-	protected ResourceLocation getEntityTexture(Entity entity) {
-	                           ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\twilightforest\client\renderer\entity\RenderTFHydra.java:26: warning: doRender(Entity,double,double,double,float,float) in RenderTFHydra overrides doRender(Entity,double,double,double,float,float) in RenderLiving; overridden method is a bridge method
-	public void doRender(Entity entity, double d, double d1, double d2, float f, float f1) {
-	            ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\twilightforest\client\renderer\entity\RenderTFHydraHead.java:26: warning: doRender(Entity,double,double,double,float,float) in RenderTFHydraHead overrides doRender(Entity,double,double,double,float,float) in RenderLiving; overridden method is a bridge method
-	public void doRender(Entity entity, double d, double d1, double d2, float f, float f1) {
-	            ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\twilightforest\client\renderer\entity\RenderTFKingSpider.java:17: warning: getEntityTexture(Entity) in RenderTFKingSpider overrides getEntityTexture(Entity) in RenderSpider; overridden method is a bridge method
-	protected ResourceLocation getEntityTexture(Entity entity) {
-	                           ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\twilightforest\client\renderer\entity\RenderTFMazeSlime.java:22: warning: getEntityTexture(Entity) in RenderTFMazeSlime overrides getEntityTexture(Entity) in RenderSlime; overridden method is a bridge method
-    protected ResourceLocation getEntityTexture(Entity par1Entity)
-                               ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\twilightforest\client\renderer\entity\RenderTFMistWolf.java:51: warning: shouldRenderPass(EntityLivingBase,int,float) in RenderTFMistWolf overrides shouldRenderPass(EntityLivingBase,int,float) in RenderWolf; overridden method is a bridge method
-    protected int shouldRenderPass(EntityLivingBase par1EntityLiving, int par2, float par3)
-                  ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\twilightforest\client\renderer\entity\RenderTFMistWolf.java:64: warning: getEntityTexture(Entity) in RenderTFMistWolf overrides getEntityTexture(Entity) in RenderWolf; overridden method is a bridge method
-    protected ResourceLocation getEntityTexture(Entity par1Entity)
-                               ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\twilightforest\client\renderer\entity\RenderTFNaga.java:28: warning: doRender(Entity,double,double,double,float,float) in RenderTFNaga overrides doRender(Entity,double,double,double,float,float) in RenderLiving; overridden method is a bridge method
-	public void doRender(Entity entity, double d, double d1, double d2, float f, float f1) {
-	            ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\twilightforest\client\renderer\entity\RenderTFSnowQueen.java:46: warning: doRender(Entity,double,double,double,float,float) in RenderTFSnowQueen overrides doRender(Entity,double,double,double,float,float) in RenderLiving; overridden method is a bridge method
-	public void doRender(Entity entity, double d, double d1, double d2, float f, float f1) {
-	            ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\twilightforest\client\renderer\entity\RenderTFSwarmSpider.java:17: warning: getEntityTexture(Entity) in RenderTFSwarmSpider overrides getEntityTexture(Entity) in RenderSpider; overridden method is a bridge method
-	protected ResourceLocation getEntityTexture(Entity entity) {
-	                           ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\twilightforest\client\renderer\entity\RenderTFTowerBroodling.java:17: warning: getEntityTexture(Entity) in RenderTFTowerBroodling overrides getEntityTexture(Entity) in RenderSpider; overridden method is a bridge method
-	protected ResourceLocation getEntityTexture(Entity entity) {
-	                           ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\twilightforest\client\renderer\entity\RenderTFTowerGhast.java:37: warning: doRender(Entity,double,double,double,float,float) in RenderTFTowerGhast overrides doRender(Entity,double,double,double,float,float) in RenderLiving; overridden method is a bridge method
-	public void doRender(Entity entity, double d, double d1, double d2, float f, float f1) {
-	            ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\twilightforest\client\renderer\entity\RenderTFWinterWolf.java:51: warning: shouldRenderPass(EntityLivingBase,int,float) in RenderTFWinterWolf overrides shouldRenderPass(EntityLivingBase,int,float) in RenderWolf; overridden method is a bridge method
-    protected int shouldRenderPass(EntityLivingBase par1EntityLiving, int par2, float par3)
-                  ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\twilightforest\client\renderer\entity\RenderTFWinterWolf.java:64: warning: getEntityTexture(Entity) in RenderTFWinterWolf overrides getEntityTexture(Entity) in RenderWolf; overridden method is a bridge method
-    protected ResourceLocation getEntityTexture(Entity par1Entity)
-                               ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\twilightforest\entity\passive\EntityTFBighorn.java:65: warning: createChild(EntityAgeable) in EntityTFBighorn overrides createChild(EntityAgeable) in EntitySheep; overridden method is a bridge method
-	public EntitySheep createChild(EntityAgeable entityanimal)
-	                   ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\vazkii\botania\client\render\entity\RenderDoppleganger.java:67: warning: doRender(Entity,double,double,double,float,float) in RenderDoppleganger overrides doRender(Entity,double,double,double,float,float) in RenderLiving; overridden method is a bridge method
-	public void doRender(Entity par1Entity, double par2, double par4, double par6, float par8, float par9) {
-	            ^
-F:\modding\eclipse\WoMMod\WorldOfMagic\build\sources\java\vazkii\botania\client\render\entity\RenderPixie.java:56: warning: doRender(Entity,double,double,double,float,float) in RenderPixie overrides doRender(Entity,double,double,double,float,float) in RenderLiving; overridden method is a bridge method
-	public void doRender(Entity par1Entity, double par2, double par4, double par6, float par8, float par9) {
-	            ^
-Note: Some input files use or override a deprecated API.
+:compileJavaNote: Some input files use or override a deprecated API.
 Note: Recompile with -Xlint:deprecation for details.
 Note: Some input files use unchecked or unsafe operations.
 Note: Recompile with -Xlint:unchecked for details.
-31 warnings
 
-:processResources UP-TO-DATE
+:processResources
 :classes
 :jar
 :compileTestJava UP-TO-DATE
 :processTestResources UP-TO-DATE
 :testClasses UP-TO-DATE
 :test UP-TO-DATE
+:extractMcpData UP-TO-DATE
+:getVersionJson
+:extractUserDev UP-TO-DATE
+:genSrgs SKIPPED
 :reobf
 :assemble
 :check UP-TO-DATE
@@ -131,4 +32,4 @@ Note: Recompile with -Xlint:unchecked for details.
 
 BUILD SUCCESSFUL
 
-Total time: 6 mins 35.392 secs
+Total time: 6 mins 52.54 secs
