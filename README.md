@@ -3,6 +3,8 @@ Special mod for world of magic modpack
 
 Dependencies:
 
+Gt22Core
+
 Thaumcraft
 
 Botania
