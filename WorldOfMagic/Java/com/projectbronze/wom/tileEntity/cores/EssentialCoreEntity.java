@@ -1,4 +1,4 @@
-package com.projectbronze.wom.tileEntity;
+package com.projectbronze.wom.tileEntity.cores;
 
 import java.util.UUID;
 
@@ -19,8 +19,8 @@ public class EssentialCoreEntity extends TileMRUGeneric
 
 	private int lastside = 0;
 	private int resettime = 20;
-	private ItemStack mainblock = new ItemStack(BlocksCore.demonicPlating, 1, 0);
-	private Block portalblock = BlockRegistry.essentialPortal;
+	private static final ItemStack mainblock = new ItemStack(BlocksCore.demonicPlating, 1, 0);
+	private static final Block portalblock = BlockRegistry.essentialPortal;
 	private int maxmru = 500000, mrupersecond = 250000;
 	private float balance = 0;
 	private UUID uuid = UUID.randomUUID();

@@ -1,29 +1,27 @@
-package com.projectbronze.wom.blocks;
+package com.projectbronze.wom.blocks.cores;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import DummyCore.Utils.MiscUtils;
-
 import com.projectbronze.wom.core.Core;
 import com.projectbronze.wom.gui.GuiHandler;
-import com.projectbronze.wom.tileEntity.EssentialCoreEntity;
+import com.projectbronze.wom.tileEntity.cores.BloodyCoreEntity;
 
-public class EssentialCore extends GenericCore
+public class BloodyCore extends GenericCore
 {
 
-	public EssentialCore(String unlocName, Block portal)
+	public BloodyCore(String unlocName, Block portal)
 	{
-		super(unlocName, portal, EssentialCoreEntity.class);
+		super(unlocName, portal, BloodyCoreEntity.class);
 	}
 
 	@Override
 	public boolean onBlockActivated(World worldObj, int x, int y, int z, EntityPlayer player, int p_149727_6_, float p_149727_7_, float p_149727_8_, float p_149727_9_)
 	{
-
 		if (!worldObj.isRemote)
 		{
-			player.openGui(Core.instance, GuiHandler.EssentialCoreID, worldObj, x, y, z);
+			player.openGui(Core.instance, GuiHandler.BloodyPortalID, worldObj, x, y, z);
 		}
 
 		return true;

@@ -1,19 +1,18 @@
 package com.projectbronze.wom.registry;
 
 import net.minecraft.tileentity.TileEntity;
-
 import com.projectbronze.wom.core.Core;
-import com.projectbronze.wom.tileEntity.AuraCoreEntity;
-import com.projectbronze.wom.tileEntity.BloodyCoreEntity;
-import com.projectbronze.wom.tileEntity.BotanCoreEntity;
 import com.projectbronze.wom.tileEntity.CommonPortalEntity;
-import com.projectbronze.wom.tileEntity.EssentialCoreEntity;
-import com.projectbronze.wom.tileEntity.ThaumCoreEntity;
 import com.projectbronze.wom.tileEntity.ThaumicFurnaceEntity;
 import com.projectbronze.wom.tileEntity.TimeReturnerEntity;
 import com.projectbronze.wom.tileEntity.TradeTileEntity;
-import com.projectbronze.wom.tileEntity.TwilightCoreEntity;
-
+import com.projectbronze.wom.tileEntity.cores.AuraCoreEntity;
+import com.projectbronze.wom.tileEntity.cores.BloodyCoreEntity;
+import com.projectbronze.wom.tileEntity.cores.BotanCoreEntity;
+import com.projectbronze.wom.tileEntity.cores.EnderCoreEntity;
+import com.projectbronze.wom.tileEntity.cores.EssentialCoreEntity;
+import com.projectbronze.wom.tileEntity.cores.ThaumCoreEntity;
+import com.projectbronze.wom.tileEntity.cores.TwilightCoreEntity;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public final class TileEntityRegistery
@@ -32,6 +31,7 @@ public final class TileEntityRegistery
 		registerTile(AuraCoreEntity.class);
 		registerTile(EssentialCoreEntity.class);
 		registerTile(TwilightCoreEntity.class);
+		registerTile(EnderCoreEntity.class);
 		registerTile(CommonPortalEntity.class);
 		registerTile(TimeReturnerEntity.class);
 		registerTile(ThaumicFurnaceEntity.class);

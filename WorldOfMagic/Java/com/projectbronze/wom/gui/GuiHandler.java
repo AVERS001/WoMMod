@@ -2,7 +2,6 @@ package com.projectbronze.wom.gui;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
-
 import com.projectbronze.wom.gui.container.BloodyPortalContainer;
 import com.projectbronze.wom.gui.container.EditContainer;
 import com.projectbronze.wom.gui.container.EssentialCoreContainer;
@@ -17,12 +16,11 @@ import com.projectbronze.wom.gui.gui.PotionBeltGUI;
 import com.projectbronze.wom.gui.gui.ThaumicFurnaceGUI;
 import com.projectbronze.wom.gui.gui.TimeReturnerGUI;
 import com.projectbronze.wom.gui.gui.TradeGUI;
-import com.projectbronze.wom.tileEntity.BloodyCoreEntity;
-import com.projectbronze.wom.tileEntity.EssentialCoreEntity;
 import com.projectbronze.wom.tileEntity.ThaumicFurnaceEntity;
 import com.projectbronze.wom.tileEntity.TimeReturnerEntity;
 import com.projectbronze.wom.tileEntity.TradeTileEntity;
-
+import com.projectbronze.wom.tileEntity.cores.BloodyCoreEntity;
+import com.projectbronze.wom.tileEntity.cores.EssentialCoreEntity;
 import cpw.mods.fml.common.network.IGuiHandler;
 
 public class GuiHandler implements IGuiHandler

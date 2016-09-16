@@ -31,7 +31,7 @@ public class CommonProxy
 		TileEntityRegistery.init();
 		NetworkRegistry.INSTANCE.registerGuiHandler(Core.instance, new GuiHandler());
 		RecepieRegistry.init();
-		GameRegistry.registerWorldGenerator(new WomWorldGenerator(), 10);
+		GameRegistry.registerWorldGenerator(new WomWorldGenerator(), 1000);
 		BookRegistry.init();
 	}
 

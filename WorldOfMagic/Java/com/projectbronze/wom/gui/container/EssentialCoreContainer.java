@@ -4,11 +4,9 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
-
 import com.gt22.gt22core.baseclasses.container.ContainerWithPlayerInv;
 import com.projectbronze.wom.gui.slot.BoundGemSlot;
-import com.projectbronze.wom.tileEntity.EssentialCoreEntity;
-
+import com.projectbronze.wom.tileEntity.cores.EssentialCoreEntity;
 import ec3.common.inventory.SlotBoundEssence;
 
 public class EssentialCoreContainer extends ContainerWithPlayerInv

@@ -2,10 +2,8 @@ package com.projectbronze.wom.gui.gui;
 
 import net.minecraft.inventory.IInventory;
 import DummyCore.Client.GuiCommon;
-
 import com.projectbronze.wom.gui.container.EssentialCoreContainer;
-import com.projectbronze.wom.tileEntity.EssentialCoreEntity;
-
+import com.projectbronze.wom.tileEntity.cores.EssentialCoreEntity;
 import ec3.client.gui.element.GuiBalanceState;
 import ec3.client.gui.element.GuiMRUState;
 import ec3.client.gui.element.GuiMRUStorage;

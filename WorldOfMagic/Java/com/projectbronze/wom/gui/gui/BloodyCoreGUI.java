@@ -6,7 +6,7 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.util.ResourceLocation;
 import com.projectbronze.wom.core.Core;
 import com.projectbronze.wom.gui.container.BloodyPortalContainer;
-import com.projectbronze.wom.tileEntity.BloodyCoreEntity;
+import com.projectbronze.wom.tileEntity.cores.BloodyCoreEntity;
 
 public class BloodyCoreGUI extends GuiContainer
 {

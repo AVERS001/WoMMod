@@ -56,7 +56,8 @@ public class CommonPortalEntity extends TileEntity
 			}
 			else
 			{
-				List<EntityItem> items = worldObj.getEntitiesWithinAABB(EntityItem.class, this.getRenderBoundingBox().expand(0.4, 0.0, 0.4));
+				List<EntityItem> items = worldObj.getEntitiesWithinAABB(EntityItem.class, this.getRenderBoundingBox().expand(0.6, 0.0, 0.6));
+				System.out.println(items.size());
 				if (!items.isEmpty())
 				{
 					port(items);
