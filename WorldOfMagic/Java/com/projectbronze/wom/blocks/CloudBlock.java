@@ -6,7 +6,6 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-
 import com.gt22.gt22core.baseclasses.block.BlockBase;
 import com.gt22.gt22core.utils.ToolClass;
 import com.projectbronze.wom.core.Core;
@@ -46,15 +45,7 @@ public class CloudBlock extends BlockBase
 	@Override
 	public boolean shouldSideBeRendered(IBlockAccess iblockaccess, int x, int y, int z, int side)
 	{
-		Block block = iblockaccess.getBlock(x, y, z);
-		if (block == BlockRegistry.cloudBlock)
-		{
-			return false;
-		}
-		else
-		{
-			return super.shouldSideBeRendered(iblockaccess, x, y, z, side);
-		}
+		return iblockaccess.getBlock(x, y, z) != this && super.shouldSideBeRendered(iblockaccess, x, y, z, side);
 	}
 
 	@Override
@@ -72,15 +63,7 @@ public class CloudBlock extends BlockBase
 	@Override
 	public boolean isBlockSolid(IBlockAccess iblockaccess, int x, int y, int z, int l)
 	{
-		Block block = iblockaccess.getBlock(x, y, z);
-		if (block == BlockRegistry.cloudBlock)
-		{
-			return false;
-		}
-		else
-		{
-			return super.isBlockSolid(iblockaccess, x, y, z, l);
-		}
+		return iblockaccess.getBlock(x, y, z) == this && super.isBlockSolid(iblockaccess, x, y, z, l);
 	}
 
 	@Override

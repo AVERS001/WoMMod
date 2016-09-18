@@ -23,7 +23,7 @@ public final class ItemRegistry
 
 	public static Item timeShard;
 	public static Item potionBelt;
-	public static GenericItem craftItem;
+	public static GenericItem platesItem;
 	public static TradeEditor tradeEditor;
 	public static void register(Item item)
 	{
@@ -42,11 +42,11 @@ public final class ItemRegistry
 	{
 		String[] plates =
 		{ "AluminumBrass", "Alumite", "Ardite", "Bronze", "Cobalt", "Copper", "Manyullyn", "Obsidian", "Steel", "Tin" };
-		craftItem = new GenericItem(Core.instance);
+		platesItem = new GenericItem(Core.instance, "plates/");
 		for (int i = 0; i < plates.length; i++)
 		{
-			craftItem.addGenericItem("plate" + plates[i]);
+			platesItem.addGenericItem("plate" + plates[i]);
 		}
-		register(craftItem);
+		register(platesItem);
 	}
 }

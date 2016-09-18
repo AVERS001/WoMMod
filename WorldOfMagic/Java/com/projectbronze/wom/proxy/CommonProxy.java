@@ -5,6 +5,7 @@ import com.projectbronze.wom.gui.GuiHandler;
 import com.projectbronze.wom.registry.BlockRegistry;
 import com.projectbronze.wom.registry.BookRegistry;
 import com.projectbronze.wom.registry.ItemRegistry;
+import com.projectbronze.wom.registry.PortalRecipeRegistry;
 import com.projectbronze.wom.registry.RecepieRegistry;
 import com.projectbronze.wom.registry.ThaumRecipeRegistry;
 import com.projectbronze.wom.registry.TileEntityRegistery;
@@ -38,5 +39,6 @@ public class CommonProxy
 	public void postInit(FMLPostInitializationEvent e)
 	{
 		ThaumRecipeRegistry.init();
+		PortalRecipeRegistry.init();//For NEI
 	}
 }

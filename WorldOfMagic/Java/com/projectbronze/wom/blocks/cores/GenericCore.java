@@ -6,9 +6,9 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-
 import com.gt22.gt22core.baseclasses.block.BlockWithTile;
 import com.gt22.gt22core.utils.ToolClass;
+import com.projectbronze.wom.blocks.CommonPortal;
 import com.projectbronze.wom.core.Core;
 
 /*
@@ -18,11 +18,11 @@ import com.projectbronze.wom.core.Core;
 public class GenericCore extends BlockWithTile
 {
 
-	private Block portal;
+	public CommonPortal portal;
 
-	public GenericCore(String unlocName, Block portal, Class<? extends TileEntity> te)
+	public GenericCore(String unlocName, CommonPortal portal, Class<? extends TileEntity> te)
 	{
-		super(Material.iron, 5F, 5F, unlocName, Core.instance, ToolClass.pickaxe, 2, te);
+		super(Material.iron, 5F, 5F, unlocName, Core.instance, ToolClass.pickaxe, 2, "cores/", te);
 		this.portal = portal;
 	}
 

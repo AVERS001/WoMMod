@@ -183,8 +183,6 @@ public abstract class GenericCoreEntity extends TileEntity
 			{
 				lastside = 1;
 				work(str);
-				clearx(worldObj);
-				lastside = 1;
 				placex(worldObj, portalblock);
 				break;
 			}
@@ -192,8 +190,6 @@ public abstract class GenericCoreEntity extends TileEntity
 			{
 				lastside = 2;
 				work(str);
-				clearz(worldObj);
-				lastside = 2;
 				placez(worldObj, portalblock);
 				break;
 			}
@@ -240,5 +236,10 @@ public abstract class GenericCoreEntity extends TileEntity
 	protected PortalDirection getDirection(int str)
 	{
 		return str == 1 ? PortalDirection.X : str == 2 ? PortalDirection.Z : PortalDirection.NONE;
+	}
+	
+	public ItemStack getFrameBlock()
+	{
+		return mainblock;
 	}
 }

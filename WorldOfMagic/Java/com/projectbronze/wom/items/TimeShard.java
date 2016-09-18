@@ -42,7 +42,7 @@ public class TimeShard extends Item
 	{
 		for (int i = 0; i < 12; i++)
 		{
-			icons[i] = reg.registerIcon(modid + ":" + textureName + "_" + i);
+			icons[i] = reg.registerIcon(modid + ":shards/" + textureName + "_" + i);
 		}
 	}
 

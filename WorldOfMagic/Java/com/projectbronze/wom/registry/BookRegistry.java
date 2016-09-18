@@ -6,6 +6,7 @@ import java.util.List;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import amerifrance.guideapi.api.GuideRegistry;
+import amerifrance.guideapi.api.abstraction.CategoryAbstract;
 import amerifrance.guideapi.api.base.Book;
 import amerifrance.guideapi.api.util.BookBuilder;
 import amerifrance.guideapi.categories.CategoryResourceLocation;
@@ -17,12 +18,10 @@ import com.projectbronze.wom.core.Core;
 public class BookRegistry
 {
 	public static Book guidebook;
-	public static List categories;
 
 	//@formatter:off
 	public static void init()
 	{
-		initCat();
 		guidebook = new BookBuilder()
 		.setAuthor("Project bronze")
 		.setBookColor(new Color(255, 0, 0))
@@ -31,15 +30,15 @@ public class BookRegistry
 		.setUnlocBookTitle("guidebookSmallTitle")
 		.setUnlocDisplayName("guidebookName")
 		.setUnlocWelcomeMessage("guidebookLargeTitle")
-		.setCategories(categories)
+		.setCategories(initCat())
 		.build();
 		GuideRegistry.registerBook(guidebook);
 	}
 
 	
-	private static void initCat()
+	private static List<CategoryAbstract> initCat()
 	{
-		categories = Arrays.asList
+		return Arrays.asList
 		(
 			new CategoryResourceLocation
 			(

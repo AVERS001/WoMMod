@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import DummyCore.Utils.MiscUtils;
+import com.projectbronze.wom.blocks.CommonPortal;
 import com.projectbronze.wom.core.Core;
 import com.projectbronze.wom.gui.GuiHandler;
 import com.projectbronze.wom.tileEntity.cores.EssentialCoreEntity;
@@ -11,7 +12,7 @@ import com.projectbronze.wom.tileEntity.cores.EssentialCoreEntity;
 public class EssentialCore extends GenericCore
 {
 
-	public EssentialCore(String unlocName, Block portal)
+	public EssentialCore(String unlocName, CommonPortal portal)
 	{
 		super(unlocName, portal, EssentialCoreEntity.class);
 	}

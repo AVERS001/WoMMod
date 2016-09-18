@@ -3,7 +3,6 @@ package com.projectbronze.wom.registry;
 import net.minecraft.tileentity.TileEntity;
 import com.projectbronze.wom.core.Core;
 import com.projectbronze.wom.tileEntity.CommonPortalEntity;
-import com.projectbronze.wom.tileEntity.ThaumicFurnaceEntity;
 import com.projectbronze.wom.tileEntity.TimeReturnerEntity;
 import com.projectbronze.wom.tileEntity.TradeTileEntity;
 import com.projectbronze.wom.tileEntity.cores.AuraCoreEntity;
@@ -20,7 +19,7 @@ public final class TileEntityRegistery
 
 	public static void registerTile(Class<? extends TileEntity> te)
 	{
-		GameRegistry.registerTileEntity(te, Core.modid + "." + te.getName());
+		GameRegistry.registerTileEntity(te, Core.modid + "." + te.getSimpleName());
 	}
 
 	public static final void init()
@@ -34,7 +33,6 @@ public final class TileEntityRegistery
 		registerTile(EnderCoreEntity.class);
 		registerTile(CommonPortalEntity.class);
 		registerTile(TimeReturnerEntity.class);
-		registerTile(ThaumicFurnaceEntity.class);
 		registerTile(TradeTileEntity.class);
 
 	}

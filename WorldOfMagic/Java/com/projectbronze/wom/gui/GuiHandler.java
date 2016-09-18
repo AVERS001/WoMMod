@@ -6,17 +6,14 @@ import com.projectbronze.wom.gui.container.BloodyPortalContainer;
 import com.projectbronze.wom.gui.container.EditContainer;
 import com.projectbronze.wom.gui.container.EssentialCoreContainer;
 import com.projectbronze.wom.gui.container.PotionBeltContainer;
-import com.projectbronze.wom.gui.container.ThaumicFuranceContainer;
 import com.projectbronze.wom.gui.container.TimeReturnerContainer;
 import com.projectbronze.wom.gui.container.TradeContainer;
 import com.projectbronze.wom.gui.gui.BloodyCoreGUI;
 import com.projectbronze.wom.gui.gui.EditGUI;
 import com.projectbronze.wom.gui.gui.EssentialCoreGUI;
 import com.projectbronze.wom.gui.gui.PotionBeltGUI;
-import com.projectbronze.wom.gui.gui.ThaumicFurnaceGUI;
 import com.projectbronze.wom.gui.gui.TimeReturnerGUI;
 import com.projectbronze.wom.gui.gui.TradeGUI;
-import com.projectbronze.wom.tileEntity.ThaumicFurnaceEntity;
 import com.projectbronze.wom.tileEntity.TimeReturnerEntity;
 import com.projectbronze.wom.tileEntity.TradeTileEntity;
 import com.projectbronze.wom.tileEntity.cores.BloodyCoreEntity;
@@ -27,11 +24,10 @@ public class GuiHandler implements IGuiHandler
 {
 	public static final int TimeRetrunerID = 0;
 	public static final int BloodyPortalID = 1;
-	public static final int ThaumicFurnaceID = 2;
-	public static final int EssentialCoreID = 3;
-	public static final int PotionBeltID = 4;
-	public static final int TradeID = 5;
-	public static final int EditModeID = 6;
+	public static final int EssentialCoreID = 2;
+	public static final int PotionBeltID = 3;
+	public static final int TradeID = 4;
+	public static final int EditModeID = 5;
 
 	@Override
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z)
@@ -45,10 +41,6 @@ public class GuiHandler implements IGuiHandler
 			case (BloodyPortalID):
 			{
 				return new BloodyPortalContainer(player.inventory, (BloodyCoreEntity) world.getTileEntity(x, y, z));
-			}
-			case (ThaumicFurnaceID):
-			{
-				return new ThaumicFuranceContainer(player.inventory, (ThaumicFurnaceEntity) world.getTileEntity(x, y, z));
 			}
 			case (EssentialCoreID):
 			{
@@ -85,10 +77,6 @@ public class GuiHandler implements IGuiHandler
 			case (BloodyPortalID):
 			{
 				return new BloodyCoreGUI(player.inventory, (BloodyCoreEntity) world.getTileEntity(x, y, z));
-			}
-			case (ThaumicFurnaceID):
-			{
-				return new ThaumicFurnaceGUI(player.inventory, (ThaumicFurnaceEntity) world.getTileEntity(x, y, z));
 			}
 			case (EssentialCoreID):
 			{

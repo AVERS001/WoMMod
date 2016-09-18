@@ -6,7 +6,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import vazkii.botania.common.block.ModBlocks;
 import vazkii.botania.common.block.tile.mana.TilePool;
-
 import com.projectbronze.wom.registry.BlockRegistry;
 
 public class BotanCoreEntity extends GenericCoreEntity
@@ -14,97 +13,6 @@ public class BotanCoreEntity extends GenericCoreEntity
 	public BotanCoreEntity()
 	{
 		super(new ItemStack(ModBlocks.storage, 1, 1), BlockRegistry.botanPortal);
-	}
-	
-	@Override
-	public void updateEntity()
-	{
-		resettime--;
-		if (resettime == 0)
-		{
-			switch (checkStructure(worldObj, xCoord, yCoord, zCoord, mainblock))
-			{
-				case (1):
-				{
-					clearx(worldObj);
-					TileEntity pool1 = worldObj.getTileEntity(xCoord + 2, yCoord, zCoord + 2);
-					TileEntity pool2 = worldObj.getTileEntity(xCoord - 2, yCoord, zCoord + 2);
-					if (pool1 instanceof TilePool && pool2 instanceof TilePool)
-					{
-						if (consumeMana((TilePool)pool1, (TilePool)pool2))
-						{
-							placex(worldObj, portalblock);
-							lastside = 1;
-						}
-					}
-					break;
-				}
-				case (2):
-				{
-					clearz(worldObj);
-					TileEntity pool1 = worldObj.getTileEntity(xCoord + 2, yCoord, zCoord + 2);
-					TileEntity pool2 = worldObj.getTileEntity(xCoord + 2, yCoord, zCoord - 2);
-					if (pool1 instanceof TilePool && pool2 instanceof TilePool)
-					{
-						if (consumeMana((TilePool)pool1, (TilePool)pool2))
-						{
-							placez(worldObj, portalblock);
-							lastside = 2;
-						}
-					}
-					break;
-				}
-				case (3):
-				{
-					clearx(worldObj);
-					TileEntity pool1 = worldObj.getTileEntity(xCoord + 2, yCoord, zCoord - 2);
-					TileEntity pool2 = worldObj.getTileEntity(xCoord - 2, yCoord, zCoord - 2);
-
-					if (pool1 instanceof TilePool && pool2 instanceof TilePool)
-					{
-						if (consumeMana((TilePool)pool1, (TilePool)pool2))
-						{
-							placex(worldObj, portalblock);
-							lastside = 1;
-						}
-					}
-					break;
-				}
-				case (4):
-				{
-					clearz(worldObj);
-					TileEntity pool1 = worldObj.getTileEntity(xCoord - 2, yCoord, zCoord + 2);
-					TileEntity pool2 = worldObj.getTileEntity(xCoord - 2, yCoord, zCoord - 2);
-					if (pool1 instanceof TilePool && pool2 instanceof TilePool)
-					{
-						if (consumeMana((TilePool)pool1, (TilePool)pool2))
-						{
-							placez(worldObj, portalblock);
-							lastside = 2;
-						}
-					}
-					break;
-				}
-				default:
-				{
-					
-					switch (lastside)
-					{
-						case (1):
-						{
-							clearx(worldObj);
-							break;
-						}
-						case (2):
-						{
-							clearz(worldObj);
-							break;
-						}
-					}
-				}
-			}
-			resettime = 20;
-		}
 	}
 
 	// Additional check for mana pools
@@ -117,13 +25,12 @@ public class BotanCoreEntity extends GenericCoreEntity
 			case (1):
 			{
 				if (worldObj.getBlock(xCoord + 2, yCoord, zCoord + 2) == pool)
-				{
 					if (worldObj.getBlock(xCoord - 2, yCoord, zCoord + 2) == pool)
 						return 1;
-					if (worldObj.getBlock(xCoord + 2, yCoord, zCoord - 2) == pool)
-						if (worldObj.getBlock(xCoord - 2, yCoord, zCoord - 2) == pool)
-							return 3;
-				}
+				if (worldObj.getBlock(xCoord + 2, yCoord, zCoord - 2) == pool)
+					if (worldObj.getBlock(xCoord - 2, yCoord, zCoord - 2) == pool)
+						return 3;
+				break;
 			}
 			case (2):
 			{
@@ -133,14 +40,18 @@ public class BotanCoreEntity extends GenericCoreEntity
 				if (worldObj.getBlock(xCoord - 2, yCoord, zCoord + 2) == pool)
 					if (worldObj.getBlock(xCoord - 2, yCoord, zCoord - 2) == pool)
 						return 4;
-
+				break;
 			}
 		}
 		return 0;
 	}
-	
+
 	private boolean consumeMana(TilePool p1, TilePool p2)
 	{
+		if (p1 == null || p2 == null)
+		{
+			return false;
+		}
 		if (p1.getCurrentMana() >= 2000 && p2.getCurrentMana() >= 2000)
 		{
 			p1.recieveMana(-2000);
@@ -154,7 +65,7 @@ public class BotanCoreEntity extends GenericCoreEntity
 	protected boolean canWork(int str)
 	{
 		TilePool[] pools = getPools(str);
-		return pools[0].getCurrentMana() >= 2000 && pools[1].getCurrentMana() >= 2000;
+		return pools == null ? false : pools[0].getCurrentMana() >= 2000 && pools[1].getCurrentMana() >= 2000;
 	}
 
 	@Override
@@ -163,31 +74,31 @@ public class BotanCoreEntity extends GenericCoreEntity
 		TilePool[] pools = getPools(str);
 		consumeMana(pools[0], pools[1]);
 	}
-	
+
 	private TilePool[] getPools(int str)
 	{
 		TileEntity p1, p2;
-		switch(str)
+		switch (str)
 		{
-			case(1):
+			case (1):
 			{
 				p1 = worldObj.getTileEntity(xCoord + 2, yCoord, zCoord + 2);
 				p2 = worldObj.getTileEntity(xCoord - 2, yCoord, zCoord + 2);
 				break;
 			}
-			case(2):
+			case (2):
 			{
 				p1 = worldObj.getTileEntity(xCoord + 2, yCoord, zCoord + 2);
 				p2 = worldObj.getTileEntity(xCoord + 2, yCoord, zCoord - 2);
 				break;
 			}
-			case(3):
+			case (3):
 			{
 				p1 = worldObj.getTileEntity(xCoord + 2, yCoord, zCoord - 2);
 				p2 = worldObj.getTileEntity(xCoord - 2, yCoord, zCoord - 2);
 				break;
 			}
-			case(4):
+			case (4):
 			{
 				p1 = worldObj.getTileEntity(xCoord - 2, yCoord, zCoord + 2);
 				p2 = worldObj.getTileEntity(xCoord - 2, yCoord, zCoord - 2);
@@ -198,13 +109,14 @@ public class BotanCoreEntity extends GenericCoreEntity
 				return null;
 			}
 		}
-		if(!(p1 instanceof TilePool) || !(p2 instanceof TilePool))
+		if (!(p1 instanceof TilePool) || !(p2 instanceof TilePool))
 		{
 			return null;
 		}
-		return new TilePool[] {(TilePool) p1, (TilePool) p2};
+		return new TilePool[]
+		{ (TilePool) p1, (TilePool) p2 };
 	}
-	
+
 	@Override
 	protected PortalDirection getDirection(int str)
 	{

@@ -13,7 +13,6 @@ import com.projectbronze.wom.blocks.CloudBlock;
 import com.projectbronze.wom.blocks.CommonPortal;
 import com.projectbronze.wom.blocks.DesertFlower;
 import com.projectbronze.wom.blocks.ItemBlockMetaBlock;
-import com.projectbronze.wom.blocks.ThaumicFurnace;
 import com.projectbronze.wom.blocks.TimeReturner;
 import com.projectbronze.wom.blocks.TradeStation;
 import com.projectbronze.wom.blocks.cores.BloodyCore;
@@ -32,25 +31,24 @@ public final class BlockRegistry
 {
 
 	//Cores
-	public static Block thaumCore;
-	public static Block botanCore;
-	public static Block bloodyCore;
-	public static Block auraCore;
-	public static Block essentialCore;
-	public static Block twilightCore;
-	public static Block enderCore;
+	public static GenericCore thaumCore;
+	public static GenericCore botanCore;
+	public static GenericCore bloodyCore;
+	public static GenericCore auraCore;
+	public static GenericCore essentialCore;
+	public static GenericCore twilightCore;
+	public static GenericCore enderCore;
 	//Portals
-	public static Block thaumPortal;
-	public static Block botanPortal;
-	public static Block bloodyPortal;
-	public static Block auraPortal;
-	public static Block essentialPortal;
-	public static Block twilightPortal;
-	public static Block enderPortal;
+	public static CommonPortal thaumPortal;
+	public static CommonPortal botanPortal;
+	public static CommonPortal bloodyPortal;
+	public static CommonPortal auraPortal;
+	public static CommonPortal essentialPortal;
+	public static CommonPortal twilightPortal;
+	public static CommonPortal enderPortal;
 	//Misc
 	public static Block timeReturner;
 	public static Block angelSteelBlock;
-	public static Block thaumicFurnace;
 	public static Block desertFlower;
 	public static Block tradeStation;
 	public static Block cloudBlock;
@@ -69,7 +67,7 @@ public final class BlockRegistry
 	public static final void init()
 	{
 		register(thaumPortal = new CommonPortal("thaumPortal", ItemApi.getItem("itemEldritchObject", 3), new ItemStack(ItemRegistry.timeShard, 1, 0)), ItemBlockMetaBlock.class);
-		register(thaumCore = new GenericCore("thaumCore", thaumCore, ThaumCoreEntity.class));
+		register(thaumCore = new GenericCore("thaumCore", thaumPortal, ThaumCoreEntity.class));
 		register(botanPortal = new CommonPortal("botanPortal", new ItemStack(ModItems.laputaShard, 1, 19), new ItemStack(ItemRegistry.timeShard, 1, 1)), ItemBlockMetaBlock.class);
 		register(botanCore = new GenericCore("botanCore", botanPortal, BotanCoreEntity.class));
 		register(bloodyPortal = new CommonPortal("bloodyPortal", new ItemStack(ModBlocks.blockStabilityGlyph, 1, 0), new ItemStack(ItemRegistry.timeShard, 1, 2)), ItemBlockMetaBlock.class);
@@ -81,12 +79,11 @@ public final class BlockRegistry
 		register(essentialCore = new EssentialCore("essentialCore", essentialPortal));
 		register(twilightPortal = new CommonPortal("twilightPortal", new ItemStack(TFItems.charmOfKeeping3, 1, 0), new ItemStack(ItemRegistry.timeShard, 1, 5)), ItemBlockMetaBlock.class);
 		register(twilightCore = new GenericCore("twilightCore", twilightPortal, TwilightCoreEntity.class));
-		register(enderPortal = new CommonPortal("enderPortal", new ItemStack(EnderIO.itemFrankenSkull, 1, 4), new ItemStack(ItemRegistry.timeShard, 1, 6)));
+		register(enderPortal = new CommonPortal("enderPortal", new ItemStack(EnderIO.itemFrankenSkull, 1, 4), new ItemStack(ItemRegistry.timeShard, 1, 6)), ItemBlockMetaBlock.class);
 		register(enderCore = new GenericCore("enderCore", enderPortal, EnderCoreEntity.class));
 		register(timeReturner = new TimeReturner("timeReturner"));
 		register(tradeStation = new TradeStation("TradeStation"));
 		register(desertFlower = new DesertFlower("DesertFlower"), ItemBlockMetaBlock.class);
-		register(thaumicFurnace = new ThaumicFurnace("ThaumicFurnace"));
 		// decoBlock = new GenericBlock();
 		// register(decoBlock, ItemBlockMetaBlock.class);
 		register(cloudBlock = new CloudBlock("CloudBlock"));

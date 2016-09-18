@@ -66,7 +66,10 @@ public class RecepieRegistry
 		'6', new ItemStack(WayofTime.alchemicalWizardry.ModItems.baseItems, 1, 28),
 		'7', new ItemStack(Blocks.dragon_egg),
 		'8', new ItemStack(WayofTime.alchemicalWizardry.ModItems.baseItems, 1, 29));
-		GameRegistry.addShapelessRecipe(GuideRegistry.getItemStackForBook(BookRegistry.guidebook), new ItemStack(Items.book), new ItemStack(Blocks.sand));
+		GameRegistry.addShapelessRecipe(
+		GuideRegistry.getItemStackForBook(BookRegistry.guidebook),
+		new ItemStack(Items.book),
+		new ItemStack(Blocks.sand));
 	}
 
 }

@@ -17,8 +17,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class TradeRenderer extends TileEntitySpecialRenderer
 {
-	private static final ResourceLocation field_147523_b = new ResourceLocation("textures/entity/beacon_beam.png");
-	private static final String __OBFID = "CL_00000962";
+	private static final ResourceLocation TEXTURE = new ResourceLocation("textures/entity/beacon_beam.png");
 
 	public void renderTileEntityAt(TradeTileEntity te, double x, double y, double z, float scale)
 	{
@@ -28,7 +27,7 @@ public class TradeRenderer extends TileEntitySpecialRenderer
 		if (f1 > 0.0F)
 		{
 			Tessellator tessellator = Tessellator.instance;
-			bindTexture(field_147523_b);
+			bindTexture(TEXTURE);
 			GL11.glTexParameterf(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_WRAP_S, 10497.0F);
 			GL11.glTexParameterf(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_WRAP_T, 10497.0F);
 			GL11.glDisable(GL11.GL_LIGHTING);

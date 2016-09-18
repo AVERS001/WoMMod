@@ -16,14 +16,10 @@ import com.projectbronze.wom.registry.BlockRegistry;
 public class ThaumCoreEntity extends GenericCoreEntity implements IAspectContainer, IEssentiaTransport
 {
 
-	private int lastside = 0;
-	private ItemStack[] inventory;
-	private String customName;
 	public AspectList aspects = new AspectList();
-	public int maxAspects = 128;
-	private int resettime = 20;
-	private int reqamount = 16;
-	private Aspect reqaspect = Aspect.ELDRITCH;
+	public static final int maxAspects = 128;
+	private static final int reqamount = 16;
+	private static final Aspect reqaspect = Aspect.ELDRITCH;
 
 	public ThaumCoreEntity()
 	{
@@ -157,13 +153,13 @@ public class ThaumCoreEntity extends GenericCoreEntity implements IAspectContain
 	@Override
 	public boolean isConnectable(ForgeDirection face)
 	{
-		return true;
+		return face != ForgeDirection.UP;
 	}
 
 	@Override
 	public boolean canInputFrom(ForgeDirection face)
 	{
-		return true;
+		return face != ForgeDirection.UP;
 	}
 
 	@Override
@@ -187,7 +183,7 @@ public class ThaumCoreEntity extends GenericCoreEntity implements IAspectContain
 	@Override
 	public int getSuctionAmount(ForgeDirection face)
 	{
-		return 64;
+		return 128;
 	}
 
 	@Override
@@ -207,7 +203,7 @@ public class ThaumCoreEntity extends GenericCoreEntity implements IAspectContain
 	@Override
 	public Aspect getEssentiaType(ForgeDirection face)
 	{
-		return null;
+		return aspects.size() == 0 ? null : reqaspect;
 	}
 
 	@Override

@@ -22,31 +22,22 @@ import com.projectbronze.wom.core.Core;
 public class DesertFlower extends BlockFlower
 {
 
-	static HashSet<Block> blockSands = null;
+	static final HashSet<Block> blockSands;
 	private IIcon[] icons = new IIcon[3];
 
-	/**
-	 * @param meta
-	 */
+	static
+	{
+		Collection<ItemStack> sands = OreDictionary.getOres("sand", false);
+		blockSands = new HashSet<Block>(sands.size());
+		sands.parallelStream().map(stack -> Block.getBlockFromItem(stack.getItem())).forEach(blockSands::add);
+	}
+	
 	public DesertFlower(String name)
 	{
 		super(1);
 		setCreativeTab(Core.tabWoM);
 		setBlockName(name);
 		setBlockTextureName(name);
-		if (blockSands == null)
-		{
-			Collection<ItemStack> itemStackSands = OreDictionary.getOres("sand", false);
-			blockSands = new HashSet<Block>(itemStackSands.size());
-			for (ItemStack itemStack : itemStackSands)
-			{
-				Block oreBlock = Block.getBlockFromItem(itemStack.getItem());
-				if (oreBlock != Blocks.air)
-				{
-					blockSands.add(oreBlock);
-				}
-			}
-		}
 	}
 
 	@Override
@@ -75,7 +66,7 @@ public class DesertFlower extends BlockFlower
 	{
 		for (int i = 0; i < 3; i++)
 		{
-			list.add(new ItemStack(Item.getItemFromBlock(this), 1, i));
+			list.add(new ItemStack(item, 1, i));
 		}
 	}
 
@@ -87,7 +78,7 @@ public class DesertFlower extends BlockFlower
 	@Override
 	protected boolean canPlaceBlockOn(Block block)
 	{
-		return block == Blocks.sand || blockSands != null && blockSands.contains(block);
+		return block == Blocks.sand || blockSands.contains(block);
 	}
 
 	@Override

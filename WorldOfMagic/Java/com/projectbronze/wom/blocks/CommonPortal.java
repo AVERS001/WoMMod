@@ -19,14 +19,15 @@ import com.projectbronze.wom.tileEntity.CommonPortalEntity;
 public class CommonPortal extends BlockWithTile
 {
 
-	private ItemStack input, output;
+	public ItemStack input, output;
 
 	public CommonPortal(String unlocName, ItemStack input, ItemStack output)
 	{
-		super(Material.portal, 0F, 0F, unlocName, Core.instance, -1, ToolClass.none, 0, CommonPortalEntity.class, new Class[] {ItemStack.class, ItemStack.class}, new Object[] {input, output});
+		super(Material.portal, 0F, 0F, unlocName, Core.instance, -1, ToolClass.none, 0, "portals/", CommonPortalEntity.class, new Class[] {ItemStack.class, ItemStack.class}, new Object[] {input, output});
 		setBlockUnbreakable();
 		setLightOpacity(8);
 		setLightLevel(1.0F);
+		setBlockBounds(0.4F, 0.0F, 0.0F, 0.6F, 1.0F, 1.0F);
 		this.input = input;
 		this.output = output;
 	}
@@ -55,8 +56,7 @@ public class CommonPortal extends BlockWithTile
 	@Override
 	public void setBlockBoundsBasedOnState(IBlockAccess world, int x, int y, int z)
 	{
-		int meta = world.getBlockMetadata(x, y, z);
-		if (meta == 0)
+		if (world.getBlockMetadata(x, y, z) == 0)
 		{
 			setBlockBounds(0.0F, 0.0F, 0.4F, 1.0F, 1.0F, 0.6F);
 		}

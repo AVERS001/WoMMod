@@ -36,7 +36,7 @@ public class CommonPortalEntity extends TileEntity
 	{
 		EntityItem entity = items.get(0);
 		ItemStack inputstack = entity.getEntityItem();
-		if (inputstack.getUnlocalizedName().equals(input.getUnlocalizedName()) && inputstack.getItemDamage() == input.getItemDamage())
+		if (ItemStack.areItemStacksEqual(inputstack, input))
 		{
 			spawnItem(output, worldObj, xCoord, yCoord, zCoord);
 			inputstack.splitStack(1);
@@ -50,14 +50,9 @@ public class CommonPortalEntity extends TileEntity
 	{
 		if (!this.worldObj.isRemote)
 		{
-			if (ticksBeforeItem > 0)
-			{
-				ticksBeforeItem--;
-			}
-			else
+			if (ticksBeforeItem-- <= 0)
 			{
 				List<EntityItem> items = worldObj.getEntitiesWithinAABB(EntityItem.class, this.getRenderBoundingBox().expand(0.6, 0.0, 0.6));
-				System.out.println(items.size());
 				if (!items.isEmpty())
 				{
 					port(items);
@@ -71,33 +66,22 @@ public class CommonPortalEntity extends TileEntity
 	public void writeToNBT(NBTTagCompound nbt)
 	{
 		super.writeToNBT(nbt);
-		NBTTagList list = new NBTTagList();
 		NBTTagCompound input = new NBTTagCompound();
-		input.setByte("idx", (byte) 0);
-		this.input.writeToNBT(input);
 		NBTTagCompound output = new NBTTagCompound();
-		output.setByte("idx", (byte) 1);
+		this.input.writeToNBT(input);
 		this.output.writeToNBT(output);
-		list.appendTag(input);
-		list.appendTag(output);
-		nbt.setTag("recepie", list);
+		NBTTagCompound rec = new NBTTagCompound();
+		rec.setTag("in", input);
+		rec.setTag("out", output);
+		nbt.setTag("recepie", rec);
 	}
 	
 	@Override
 	public void readFromNBT(NBTTagCompound nbt)
 	{
 		super.readFromNBT(nbt);
-		NBTTagList list = nbt.getTagList("recepie", 10);
-		for(int i = 0; i < list.tagCount(); i++)
-		{
-			if(list.getCompoundTagAt(i).getByte("idx") == 0)
-			{
-				input = ItemStack.loadItemStackFromNBT(list.getCompoundTagAt(i));
-			}
-			else
-			{
-				output = ItemStack.loadItemStackFromNBT(list.getCompoundTagAt(i));
-			}
-		}
+		NBTTagCompound rec = nbt.getCompoundTag("recepie");
+		input = ItemStack.loadItemStackFromNBT(rec.getCompoundTag("in"));
+		output = ItemStack.loadItemStackFromNBT(nbt.getCompoundTag("out"));
 	}
 }

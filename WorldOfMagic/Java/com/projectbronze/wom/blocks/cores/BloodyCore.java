@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import DummyCore.Utils.MiscUtils;
+import com.projectbronze.wom.blocks.CommonPortal;
 import com.projectbronze.wom.core.Core;
 import com.projectbronze.wom.gui.GuiHandler;
 import com.projectbronze.wom.tileEntity.cores.BloodyCoreEntity;
@@ -11,7 +12,7 @@ import com.projectbronze.wom.tileEntity.cores.BloodyCoreEntity;
 public class BloodyCore extends GenericCore
 {
 
-	public BloodyCore(String unlocName, Block portal)
+	public BloodyCore(String unlocName, CommonPortal portal)
 	{
 		super(unlocName, portal, BloodyCoreEntity.class);
 	}
